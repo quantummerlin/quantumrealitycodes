@@ -38,6 +38,33 @@ body{
   line-height:1.65;
 }
 
+/* ── Skip Link (Accessibility) ── */
+.skip-link{
+  position:fixed;top:-100%;left:50%;transform:translateX(-50%);
+  z-index:99999;background:var(--teal);color:var(--indigo-deep);
+  padding:0.6rem 1.5rem;border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  font-family:'Cinzel',serif;font-size:0.8rem;font-weight:700;
+  text-decoration:none;transition:top 0.3s ease;
+}
+.skip-link:focus{top:0}
+
+/* ── SVG Logo ── */
+.site-logo-geo{
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:0.5rem;
+}
+.site-logo-geo svg{
+  filter:drop-shadow(0 0 12px rgba(0,212,170,0.3));
+  animation:geoRotate 120s linear infinite;
+}
+
+/* ── Focus Styles (Accessibility) ── */
+:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:3px;
+  border-radius:var(--radius-sm);
+}
+
 /* ── Layered Background ── */
 #bg-nebula{
   position:fixed;inset:0;z-index:0;
@@ -45,7 +72,7 @@ body{
     radial-gradient(ellipse at 20% 50%,rgba(123,94,167,0.3) 0%,transparent 60%),
     radial-gradient(ellipse at 80% 20%,rgba(0,212,170,0.1) 0%,transparent 50%),
     radial-gradient(ellipse at 60% 80%,rgba(10,10,70,0.45) 0%,transparent 55%),
-    url('../images/nebula-bg.jpeg') center/cover no-repeat;
+    radial-gradient(ellipse at 50% 50%,rgba(30,15,80,1) 0%,rgba(4,4,24,1) 100%);
   filter:brightness(0.38) saturate(1.4);
 }
 #bg-stars{
@@ -61,8 +88,17 @@ body{
 }
 #bg-geometry{
   position:fixed;inset:0;z-index:3;
-  background:url('../images/sacred-geometry.png') center/cover no-repeat;
-  opacity:0.04;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 50%,
+      rgba(212,175,55,0.03) 0deg,transparent 30deg,
+      rgba(0,212,170,0.02) 60deg,transparent 90deg),
+    repeating-linear-gradient(60deg,
+      transparent 0px,rgba(212,175,55,0.015) 1px,transparent 2px,transparent 80px),
+    repeating-linear-gradient(-60deg,
+      transparent 0px,rgba(0,212,170,0.015) 1px,transparent 2px,transparent 80px),
+    repeating-linear-gradient(0deg,
+      transparent 0px,rgba(212,175,55,0.01) 1px,transparent 2px,transparent 80px);
+  opacity:0.6;
   animation:geoRotate 200s linear infinite;
 }
 #bg-rays{

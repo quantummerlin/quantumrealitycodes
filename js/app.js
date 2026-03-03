@@ -1287,14 +1287,45 @@ function deleteJournalEntry(idx) {
 function exportJournal() {
   const journal = getJournal();
   if (journal.length === 0) { toast('Journal is empty'); return; }
-  let text = 'QUANTUM REALITY CODES JOURNAL\n' + '='.repeat(40) + '\n\n';
-  journal.forEach(e => {
-    text += `Code: ${e.code}\nCategory: ${e.category}\nDate: ${e.date}\n${e.answered ? 'STATUS: ANSWERED\n' : ''}\n${e.text}\n\n${'—'.repeat(40)}\n\n`;
-  });
-  const blob = new Blob([text], { type: 'text/plain' });
+  // Export as JSON for reimportability
+  const blob = new Blob([JSON.stringify(journal, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = 'intention-journal.txt'; a.click();
-  toast('Journal exported');
+  a.href = URL.createObjectURL(blob); a.download = 'quantum-reality-codes-journal.json'; a.click();
+  toast('Journal exported as JSON');
+}
+function importJournal() {
+  const input = document.getElementById('journal-import-input');
+  if (input) input.click();
+}
+function handleJournalImport(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const imported = JSON.parse(e.target.result);
+      if (!Array.isArray(imported)) { toast('Invalid journal file'); return; }
+      const existing = getJournal();
+      const existingIds = new Set(existing.map(e => e.id));
+      let added = 0;
+      imported.forEach(entry => {
+        if (entry.code && entry.text && !existingIds.has(entry.id)) {
+          existing.push(entry);
+          added++;
+        }
+      });
+      if (added === 0) { toast('No new entries to import'); return; }
+      existing.sort((a, b) => (b.id || 0) - (a.id || 0));
+      saveJournal(existing);
+      renderJournal();
+      updateIntentionStats();
+      toast(`Imported ${added} intention${added > 1 ? 's' : ''}`);
+    } catch (err) {
+      toast('Could not read file — ensure it is a valid JSON export');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
 }
 function clearAllJournal() {
   const journal = getJournal();
@@ -1888,6 +1919,52 @@ function initBackToTop() {
 }
 
 /* ─────────────────────────────────────────────
+   15g. KEYBOARD SHORTCUTS
+   ───────────────────────────────────────────── */
+function initKeyboardNav() {
+  document.addEventListener('keydown', (e) => {
+    // Don't intercept when typing in inputs/textareas
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    // Escape closes modals/overlays
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('intention-modal');
+      if (modal && modal.classList.contains('open')) { closeIntentionModal(); return; }
+      const welcome = document.getElementById('welcome-overlay');
+      if (welcome && welcome.style.display === 'flex') { dismissWelcome(); return; }
+    }
+
+    // Alt+number for quick page navigation
+    if (e.altKey) {
+      const pages = ['home', 'how', 'wisdom', 'amplify', 'journal', 'about'];
+      const idx = parseInt(e.key) - 1;
+      if (idx >= 0 && idx < pages.length) {
+        e.preventDefault();
+        navigate(pages[idx]);
+        if (pages[idx] === 'journal') renderJournal();
+      }
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────
+   15h. HASH-BASED ROUTING
+   ───────────────────────────────────────────── */
+function initHashRouting() {
+  const validPages = ['home', 'how', 'wisdom', 'amplify', 'journal', 'about', 'privacy'];
+  function handleHash() {
+    const hash = location.hash.replace('#', '');
+    if (hash && validPages.includes(hash)) {
+      navigate(hash);
+      if (hash === 'journal') renderJournal();
+    }
+  }
+  window.addEventListener('hashchange', handleHash);
+  // Handle initial hash on load
+  if (location.hash) handleHash();
+}
+
+/* ─────────────────────────────────────────────
    16. INIT
    ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1895,10 +1972,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initAudio();
   initBackToTop();
+  initKeyboardNav();
   updateIntentionStats();
   updateMeditationHistory();
   setTimeout(() => { renderWisdoms(); renderJournal(); }, 100);
-  navigate('home');
+
+  // Navigate to hash page or default to home
+  const hash = location.hash.replace('#', '');
+  const validPages = ['home', 'how', 'wisdom', 'amplify', 'journal', 'about', 'privacy'];
+  navigate(hash && validPages.includes(hash) ? hash : 'home');
+  initHashRouting();
 
   // First-visit welcome
   setTimeout(showWelcome, 800);
