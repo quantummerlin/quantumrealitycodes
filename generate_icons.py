@@ -1,5 +1,5 @@
 """
-Generate PWA icons for Prayer Codes app.
+Generate PWA icons for Quantum Reality Codes app.
 Creates PNG icons at various sizes from an SVG source.
 Run: python generate_icons.py
 """
@@ -48,7 +48,7 @@ def create_png(width, height, pixels):
 
 
 def draw_icon(size, maskable=False):
-    """Draw the Prayer Codes icon programmatically."""
+    """Draw the Quantum Reality Codes icon programmatically."""
     pixels = [0] * (size * size * 4)
 
     cx, cy = size / 2, size / 2
@@ -186,7 +186,7 @@ def draw_icon(size, maskable=False):
 
 
 def main():
-    print("Generating Prayer Codes PWA icons...")
+    print("Generating Quantum Reality Codes PWA icons...")
 
     for sz in SIZES:
         print(f"  Creating icon-{sz}x{sz}.png")

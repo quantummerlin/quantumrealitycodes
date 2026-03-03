@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate all static assets for Prayer Codes"""
+"""Generate all static assets for Quantum Reality Codes"""
 
 import numpy as np
 from PIL import Image, ImageDraw
@@ -94,7 +94,7 @@ def make_frequency():
         print(f"  ✓ creation-frequency.wav ({os.path.getsize(wav_path)//1024}KB) [ffmpeg not found, keeping wav]")
 
 if __name__ == '__main__':
-    print("Generating Prayer Codes assets...")
+    print("Generating Quantum Reality Codes assets...")
     make_stars()
     make_twinkling()
     make_frequency()

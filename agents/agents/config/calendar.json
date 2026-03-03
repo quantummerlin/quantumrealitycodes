@@ -1,0 +1,117 @@
+{
+  "description": "Weekly theme rotation calendar for Quantum Reality Codes community content. The MasterAgent uses this to auto-select the weekly theme when running 'weekly' without specifying a theme.",
+  "weekly_rotation": [
+    {
+      "week": 1,
+      "theme": "Core Alignment",
+      "description": "Return to foundation — aligning intentions with authentic self",
+      "category_focus": "core_alignment",
+      "science_page": "quantum-mysteries.html",
+      "color_accent": "#00D4AA"
+    },
+    {
+      "week": 2,
+      "theme": "Abundance Activation",
+      "description": "Activating the abundance frequency and dissolving scarcity patterns",
+      "category_focus": "abundance",
+      "science_page": "law-of-attraction.html",
+      "color_accent": "#FFD700"
+    },
+    {
+      "week": 3,
+      "theme": "Energy Shield",
+      "description": "Building energetic boundaries and protecting intention integrity",
+      "category_focus": "energy_shield",
+      "science_page": "nlp-anchoring.html",
+      "color_accent": "#64B5F6"
+    },
+    {
+      "week": 4,
+      "theme": "Healing Frequency",
+      "description": "Directing vibrational encoding toward physical, emotional, and energetic healing",
+      "category_focus": "healing",
+      "science_page": "biology-of-belief.html",
+      "color_accent": "#81C784"
+    },
+    {
+      "week": 5,
+      "theme": "Divine Connection",
+      "description": "Deepening connection to Source and universal consciousness",
+      "category_focus": "divine_connection",
+      "science_page": "circle-of-eight.html",
+      "color_accent": "#CE93D8"
+    },
+    {
+      "week": 6,
+      "theme": "Gratitude Amplification",
+      "description": "Using gratitude as the highest vibrational frequency for manifestation",
+      "category_focus": "gratitude",
+      "science_page": "neuroplasticity.html",
+      "color_accent": "#FF9800"
+    },
+    {
+      "week": 7,
+      "theme": "Relationship Resonance",
+      "description": "Harmonising relationships through internal frequency shifts",
+      "category_focus": "relationships",
+      "science_page": "morphic-resonance.html",
+      "color_accent": "#F48FB1"
+    },
+    {
+      "week": 8,
+      "theme": "Purpose Activation",
+      "description": "Activating life purpose through structured intention and vibrational clarity",
+      "category_focus": "purpose",
+      "science_page": "integrated-mechanism.html",
+      "color_accent": "#4FC3F7"
+    }
+  ],
+  "special_themes": [
+    {
+      "trigger": "new_year",
+      "dates": ["01-01", "01-02", "01-03", "01-04", "01-05", "01-06", "01-07"],
+      "theme": "New Reality Blueprint",
+      "description": "Setting the vibrational blueprint for the entire year ahead"
+    },
+    {
+      "trigger": "equinox_spring",
+      "dates": ["03-19", "03-20", "03-21", "03-22", "03-23", "03-24", "03-25"],
+      "theme": "Rebirth & Renewal",
+      "description": "Aligning with the equinox energy of balance and new growth"
+    },
+    {
+      "trigger": "solstice_summer",
+      "dates": ["06-19", "06-20", "06-21", "06-22", "06-23", "06-24", "06-25"],
+      "theme": "Peak Power Activation",
+      "description": "Harnessing the longest day energy for maximum manifestation"
+    },
+    {
+      "trigger": "equinox_autumn",
+      "dates": ["09-21", "09-22", "09-23", "09-24", "09-25", "09-26", "09-27"],
+      "theme": "Harvest & Gratitude",
+      "description": "Harvesting manifestations and seeding the next cycle with gratitude"
+    },
+    {
+      "trigger": "solstice_winter",
+      "dates": ["12-19", "12-20", "12-21", "12-22", "12-23", "12-24", "12-25"],
+      "theme": "Inner Light Activation",
+      "description": "Finding the light within during the shortest day — the seed of renewal"
+    }
+  ],
+  "daily_content_types": {
+    "monday": "daily_code",
+    "tuesday": "meditation_challenge",
+    "wednesday": "science_deepdive",
+    "thursday": "story_share",
+    "friday": "collective_code",
+    "saturday": "growth_day",
+    "sunday": "reflection"
+  },
+  "posting_schedule": {
+    "daily_code_time": "08:00",
+    "engagement_post_time": "12:00",
+    "collective_session_time": "20:00",
+    "timezone": "UTC",
+    "note": "Adjust all times to your community's primary timezone"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "agent": "wisdom",
+  "timestamp": "2026-03-04T07:21:08.179422",
+  "date": "2026-03-04",
+  "category": "clarity_intuition",
+  "daily_quote": {
+    "text": "What you think, you become. What you feel, you attract. What you imagine, you create.",
+    "ref": "Buddha"
+  },
+  "quotes": [
+    {
+      "text": "Your vision will become clear only when you can look into your own heart.",
+      "ref": "Carl Jung"
+    },
+    {
+      "text": "The only real valuable thing is intuition.",
+      "ref": "Albert Einstein"
+    },
+    {
+      "text": "In the midst of movement and chaos, keep stillness inside of you.",
+      "ref": "Deepak Chopra"
+    },
+    {
+      "text": "Trust yourself. You know more than you think you do.",
+      "ref": "Benjamin Spock"
+    }
+  ],
+  "topic": null
+}

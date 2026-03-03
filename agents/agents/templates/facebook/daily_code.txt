@@ -1,0 +1,33 @@
+{{hook}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TODAY'S REALITY CODE: {{code}}
+Category: {{category}}
+Vibrational Value: {{total}}
+Root Number: {{root}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"{{quote_text}}"
+— {{quote_ref}}
+
+{{intention_narrative}}
+
+{{pattern_narrative}}
+
+Root Number {{root}} represents: {{root_meaning}}.
+
+━━━━ HOW TO USE THIS CODE ━━━━
+
+1. Close your eyes and breathe deeply 3 times
+2. Repeat the code silently: {{code}}
+3. Hold the intention in your heart for 3-5 minutes
+4. If you have the app, listen to the 37-73 Hz creation frequency while you meditate
+5. Share this post to amplify the collective intention
+
+Drop a {{emoji}} in the comments if you meditated on this code today.
+
+Build your own Reality Code (free, forever): {{site}}
+
+#QuantumRealityCodes #RealityCode #ManifestWithIntention #ConsciousCreation

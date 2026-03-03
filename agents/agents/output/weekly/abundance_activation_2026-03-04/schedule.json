@@ -1,0 +1,91 @@
+{
+  "theme": "abundance activation",
+  "start_date": "2026-03-04",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-03-04",
+      "code": "5704",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-03-05",
+      "code": "5814",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-03-06",
+      "code": "6105",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-03-07",
+      "code": "5644",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-03-08",
+      "code": "5635",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-03-09",
+      "code": "5766",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-03-10",
+      "code": "5650",
+      "category": "Abundance Activation",
+      "content": [
+        "daily_code_telegram",
+        "daily_code_facebook",
+        "shareable_card"
+      ]
+    }
+  ],
+  "extras": [
+    "weekly_intro (Telegram + Facebook)",
+    "engagement_post (Telegram + Facebook)",
+    "7-day_challenge (both platforms)",
+    "blog_post",
+    "email_newsletter",
+    "social_media (IG, TikTok, X, YouTube)"
+  ]
+}

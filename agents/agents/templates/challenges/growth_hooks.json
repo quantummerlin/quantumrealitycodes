@@ -1,0 +1,52 @@
+{
+  "viral_sharing_prompts": [
+    "Tag someone who needs to hear this today",
+    "Share this post — your share might be the sign someone was waiting for",
+    "Know someone on a manifestation journey? Send them this group link",
+    "Screenshot your Reality Code and post it to your story with the hashtag #QuantumRealityCodes",
+    "If this code resonated with you, share it — collective intention amplifies everything"
+  ],
+  "cross_platform_ctas": {
+    "telegram_to_facebook": "Join our Facebook community for deeper discussions and weekly events: [Facebook Group URL]",
+    "facebook_to_telegram": "Get daily Reality Codes delivered to your phone — join our Telegram group: [Telegram Group URL]",
+    "both_to_website": "Create your own Reality Code (free, forever): quantumrealitycodes.com",
+    "both_to_science": "Read the science behind vibrational encoding: quantumrealitycodes.com/qrcodes-science/"
+  },
+  "milestone_messages": {
+    "10_members": {
+      "telegram": "🎉 *10 MEMBERS!* 🎉\n\nOur collective field is growing. 10 conscious creators, united by intention.\n\nEvery mind that joins amplifies the resonance. Share this group with one person who would benefit.\n\n#QuantumRealityCodes #Growing",
+      "facebook": "10 MEMBERS!\n\nWhat started as a seed of intention is growing into a community.\n\n10 conscious creators. 10 unique vibrational signatures. One collective field.\n\nWelcome, everyone. The best is yet to come.\n\nKnow someone who should be here? Tag them below."
+    },
+    "50_members": {
+      "telegram": "🌟 *50 MEMBERS!* 🌟\n\n50 minds. 50 intentions. One quantum field.\n\nOur collective resonance is becoming something powerful. Thank you for being part of this.\n\nLet's hit 100. Share the group. Invite one friend. Your recommendation carries more weight than any algorithm.\n\n🌐 quantumrealitycodes.com",
+      "facebook": "50 MEMBERS — A MILESTONE\n\nFifty people chose to be here. Not because of an ad. Not because of an algorithm. Because someone told them about this, and it resonated.\n\nThat's how real communities grow — through genuine recommendation.\n\nIf you're one of the 50, thank you. If you know someone who should be 51, tag them.\n\nLet's build something extraordinary."
+    },
+    "100_members": {
+      "telegram": "🔥 *100 MEMBERS!* 🔥\n\n100 conscious creators. 100 vibrational signatures. One unified field.\n\nThis is no longer a small experiment — it's a movement.\n\nTo celebrate: we're running a special *Collective Code Session* this week. Stay tuned for details.\n\nThank you for believing in the power of intention. ✨",
+      "facebook": "100 MEMBERS\n\nOne hundred people who believe that intention creates reality.\n\nWe started with an idea: what if you could encode your intentions into a numerical code and meditate on it? What if a community of people did this together?\n\nNow we're 100. And growing.\n\nTo celebrate, this week's challenge is going to be special. Watch this space.\n\nThank you for being here. Share this milestone — let's make it 200."
+    },
+    "500_members": {
+      "telegram": "⚡ *500 MEMBERS!* ⚡\n\nHalf a thousand conscious creators.\n\nThe quantum field we've built together is extraordinary. Every code shared, every meditation completed, every story posted — it all contributes to a collective resonance that's bigger than any individual.\n\nThis community exists because YOU shared it. Keep going.\n\n🌐 quantumrealitycodes.com",
+      "facebook": "500 MEMBERS\n\nFive hundred people. Zero ads. Zero paid promotion. Just word of mouth and genuine belief in the power of intention.\n\nThis group exists because someone you trust told you about it. And you told someone else.\n\nThat's not marketing. That's resonance.\n\nThank you for being part of something real."
+    },
+    "1000_members": {
+      "telegram": "🏆 *1,000 MEMBERS!* 🏆\n\nOne. Thousand. Conscious. Creators.\n\nA year ago this was an idea. Today it's a movement.\n\n1,000 Reality Codes. 1,000 intentions. One collective field.\n\nThe research says group intention creates measurable effects. With 1,000 minds aligned... imagine what's possible.\n\nThank you. Every single one of you. ✨",
+      "facebook": "1,000 MEMBERS\n\nWe did it. One thousand conscious creators, united by structured intention.\n\nNo ads. No paid growth. No gimmicks. Just people telling people about something that worked for them.\n\nThis is proof that authenticity beats algorithms.\n\nTo every person who shared this group, who posted their code, who showed up for a collective session — thank you.\n\nWe're just getting started."
+    }
+  },
+  "referral_messaging": {
+    "personal_invite_template": "Hey! I've been using this free app called Quantum Reality Codes — you write structured intentions and it encodes them into a 6-digit vibrational code. Then you meditate on the code. Sounds unusual but I've been getting real results. There's a community too. Check it out: quantumrealitycodes.com",
+    "story_share_template": "My Reality Code today: {{code}} — built a structured intention for {{category}}. Create yours free at quantumrealitycodes.com #QuantumRealityCodes",
+    "testimonial_cta": "If Reality Codes has impacted your practice, the most powerful thing you can do is tell someone. Not a broadcast — a personal message to ONE person who would benefit."
+  },
+  "hashtag_strategy": {
+    "primary": ["#QuantumRealityCodes", "#RealityCode", "#ManifestWithIntention"],
+    "secondary": ["#VibrationalEncoding", "#ConsciousCreation", "#StructuredIntention", "#CreationFrequency"],
+    "trending_hooks": ["#Manifestation", "#LawOfAttraction", "#QuantumPhysics", "#Meditation", "#Mindfulness", "#SpiritualGrowth"],
+    "platform_specific": {
+      "tiktok": ["#ManifestationTok", "#SpiritualTikTok", "#QuantumTok", "#MindsetShift"],
+      "instagram": ["#ManifestationJourney", "#HighVibration", "#EnergyHealing", "#UniverseHasYourBack"],
+      "twitter": ["#Manifest", "#Quantum", "#Intention", "#Consciousness"]
+    }
+  }
+}

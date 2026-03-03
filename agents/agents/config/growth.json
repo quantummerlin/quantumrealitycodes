@@ -1,0 +1,99 @@
+{
+  "description": "Growth strategy configuration for Quantum Reality Codes community. Used by community agents to embed growth mechanics into generated content.",
+  "community_links": {
+    "website": "https://quantumrealitycodes.com",
+    "facebook_group": "https://facebook.com/groups/quantumrealitycodes",
+    "telegram_group": "https://t.me/quantumrealitycodes",
+    "instagram": "https://instagram.com/quantumrealitycodes",
+    "tiktok": "https://tiktok.com/@quantumrealitycodes",
+    "twitter": "https://x.com/quantumcodes",
+    "youtube": "https://youtube.com/@quantumrealitycodes",
+    "buymeacoffee": "https://buymeacoffee.com/quantumrealitycodes"
+  },
+  "growth_targets": {
+    "month_1": {
+      "facebook_members": 100,
+      "telegram_members": 100,
+      "website_daily_visits": 50,
+      "strategy": "Seed with quality content, run first 7-day challenge, post daily codes"
+    },
+    "month_2": {
+      "facebook_members": 300,
+      "telegram_members": 250,
+      "website_daily_visits": 150,
+      "strategy": "Weekly challenges, member spotlights, cross-platform promotion, science article shares"
+    },
+    "month_3": {
+      "facebook_members": 1000,
+      "telegram_members": 750,
+      "website_daily_visits": 500,
+      "strategy": "Viral challenges, testimonial campaigns, SEO blog content, email newsletter launch"
+    }
+  },
+  "content_pillars": [
+    {
+      "pillar": "Daily Reality Code",
+      "frequency": "daily",
+      "platforms": ["telegram", "facebook"],
+      "purpose": "Consistent value delivery, daily touchpoint, builds habit"
+    },
+    {
+      "pillar": "Weekly Challenge",
+      "frequency": "weekly",
+      "platforms": ["telegram", "facebook"],
+      "purpose": "Structured engagement, community bonding, growth via Day 6 invites"
+    },
+    {
+      "pillar": "Science & Education",
+      "frequency": "2x per week",
+      "platforms": ["facebook", "blog"],
+      "purpose": "Build credibility, SEO value, shareable content"
+    },
+    {
+      "pillar": "Community Stories",
+      "frequency": "weekly",
+      "platforms": ["telegram", "facebook"],
+      "purpose": "Social proof, emotional connection, retention"
+    },
+    {
+      "pillar": "Collective Sessions",
+      "frequency": "weekly",
+      "platforms": ["telegram", "facebook"],
+      "purpose": "Peak engagement, community identity, FOMO for non-participants"
+    }
+  ],
+  "viral_loops": [
+    {
+      "name": "Code Sharing Loop",
+      "trigger": "User generates a Reality Code",
+      "action": "Share buttons include direct links to Telegram/Facebook groups",
+      "expected_conversion": "5-10% of shares lead to new group joins"
+    },
+    {
+      "name": "Challenge Invite Loop",
+      "trigger": "Day 6 of every weekly challenge",
+      "action": "Each participant invites one person",
+      "expected_conversion": "20-30% of invites convert to new members"
+    },
+    {
+      "name": "Testimonial Loop",
+      "trigger": "Day 4 story sharing + member spotlights",
+      "action": "Stories are reshared, attracting curious outsiders",
+      "expected_conversion": "Stories are the highest-converting content type"
+    },
+    {
+      "name": "Science Shareability Loop",
+      "trigger": "Science articles published on the website",
+      "action": "Members share articles on personal feeds with their Reality Code",
+      "expected_conversion": "Educational content has the longest sharing lifespan"
+    }
+  ],
+  "onboarding_funnel": {
+    "step_1": "Discover (social media, word of mouth, search) → Visit website",
+    "step_2": "Try (create first Reality Code) → Experience the encoding",
+    "step_3": "Share (share code via WhatsApp/social) → Create social proof",
+    "step_4": "Join (click community link) → Enter Telegram/Facebook group",
+    "step_5": "Engage (participate in daily codes + challenges) → Build habit",
+    "step_6": "Advocate (invite friends, share stories) → Drive organic growth"
+  }
+}

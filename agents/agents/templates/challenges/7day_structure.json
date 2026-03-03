@@ -1,0 +1,79 @@
+{
+  "name": "7-Day Quantum Reality Codes Challenge",
+  "description": "A structured 7-day community challenge designed to deepen intention practice and grow the community through engagement and viral sharing.",
+  "structure": [
+    {
+      "day": 1,
+      "title": "Set Your Intention",
+      "type": "activation",
+      "goal": "Get participants to create their first Reality Code and share it",
+      "action": "Visit the website, create a code, post it in the group",
+      "engagement_metric": "Number of codes shared in comments",
+      "growth_mechanism": "Participants sharing codes creates social proof and curiosity"
+    },
+    {
+      "day": 2,
+      "title": "Meditation with Creation Frequency",
+      "type": "depth",
+      "goal": "Deepen the practice through meditation on the Amplify page",
+      "action": "10-minute meditation with 37-73 Hz frequency",
+      "engagement_metric": "Number of 'Done' comments after meditation",
+      "growth_mechanism": "Meditation creates personal investment in the practice"
+    },
+    {
+      "day": 3,
+      "title": "Science Deep-Dive",
+      "type": "credibility",
+      "goal": "Build intellectual trust through scientific evidence",
+      "action": "Read a science article from qrcodes-science/ and share an insight",
+      "engagement_metric": "Number of comments sharing scientific insights",
+      "growth_mechanism": "Science content is highly shareable and builds credibility"
+    },
+    {
+      "day": 4,
+      "title": "Share Your Story",
+      "type": "social_proof",
+      "goal": "Generate testimonials and manifestation stories",
+      "action": "Share a synchronicity, shift, or win since starting the challenge",
+      "engagement_metric": "Number of personal stories shared",
+      "growth_mechanism": "Stories create emotional connection and attract new members"
+    },
+    {
+      "day": 5,
+      "title": "Collective Code Day",
+      "type": "community",
+      "goal": "Unite the group around a single collective intention",
+      "action": "Everyone meditates on the same code at the same time",
+      "engagement_metric": "Number of participants in the collective session",
+      "growth_mechanism": "Group events create belonging and FOMO for non-participants"
+    },
+    {
+      "day": 6,
+      "title": "Growth Day — Invite a Friend",
+      "type": "growth",
+      "goal": "Viral growth through personal invitation",
+      "action": "Invite one person to the community with a personal message",
+      "engagement_metric": "Number of new members joining",
+      "growth_mechanism": "Personal invitation has the highest conversion rate of any growth tactic"
+    },
+    {
+      "day": 7,
+      "title": "Reflection & Celebration",
+      "type": "retention",
+      "goal": "Seal the experience and create anticipation for the next challenge",
+      "action": "Answer 5 reflection prompts and share in the group",
+      "engagement_metric": "Number of reflections shared + retention rate for next challenge",
+      "growth_mechanism": "Public reflection creates commitment and attracts curious onlookers"
+    }
+  ],
+  "timing": {
+    "post_time_daily": "08:00",
+    "collective_session_time": "20:00",
+    "timezone_note": "Adjust to your community's primary timezone"
+  },
+  "success_metrics": {
+    "minimum_viable": "5+ participants completing all 7 days",
+    "good": "15+ participants with 3+ new member invites",
+    "excellent": "30+ participants with 10+ new members from Day 6"
+  }
+}

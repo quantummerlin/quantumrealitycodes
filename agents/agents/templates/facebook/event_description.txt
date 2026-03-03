@@ -1,0 +1,32 @@
+COLLECTIVE REALITY CODE SESSION
+Theme: {{theme}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"{{quote_text}}"
+— {{quote_ref}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT IS THIS?
+
+A collective intention session where everyone in the group meditates on the same Reality Code at the same time. Research on group intention (the 'Circle of Eight' studies) shows that focused group consciousness produces measurable effects.
+
+TODAY'S COLLECTIVE CODE: {{code}}
+
+HOW IT WORKS:
+
+1. At the scheduled time, find a quiet space
+2. Open {{site}} and go to the Amplify page
+3. Play the 37-73 Hz creation frequency
+4. Close your eyes and hold the code {{code}} in your mind
+5. Meditate for 15 minutes
+6. After the session, come back and share what you experienced
+
+The more people who join, the more powerful the collective field becomes.
+
+Free to join. No account needed. Just intention.
+
+{{site}}
+
+#QuantumRealityCodes #CollectiveIntention #GroupMeditation

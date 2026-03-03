@@ -22,6 +22,10 @@ from content.blog_agent import BlogAgent
 from content.email_agent import EmailAgent
 from distribution.html_agent import HTMLAgent
 from distribution.deploy_agent import DeployAgent
+from community.telegram_agent import TelegramAgent
+from community.facebook_agent import FacebookAgent
+from community.challenge_agent import ChallengeAgent
+from community.onboarding_agent import OnboardingAgent
 
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "soul.json"
 OUTPUT_BASE = Path(__file__).parent.parent / "output"
@@ -41,6 +45,10 @@ class MasterAgent:
         self.email = EmailAgent()
         self.html = HTMLAgent()
         self.deploy = DeployAgent()
+        self.telegram = TelegramAgent()
+        self.facebook = FacebookAgent()
+        self.challenge = ChallengeAgent()
+        self.onboarding = OnboardingAgent()
 
     def _load_soul(self):
         try:
@@ -56,13 +64,13 @@ class MasterAgent:
 
     def _save_json(self, data, filepath):
         """Save data as JSON file."""
-        with open(filepath, "w") as f:
-            json.dump(data, f, indent=2, default=str)
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, default=str, ensure_ascii=False)
         print(f"  [saved] {filepath}")
 
     def _save_text(self, text, filepath):
         """Save text to file."""
-        with open(filepath, "w") as f:
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(text)
         print(f"  [saved] {filepath}")
 
@@ -348,6 +356,246 @@ class MasterAgent:
 
     # ─── Router ───
 
+    # ─── Pipeline: Weekly Campaign ───
+
+    def run_weekly(self, theme=None):
+        """Generate a full week of themed content for community posting."""
+        from datetime import timedelta
+
+        theme = theme or self._get_weekly_theme()
+        today = date.today()
+        slug = theme.lower().replace(" ", "_").replace("/", "_")[:30]
+        out_dir = self._ensure_dir(OUTPUT_BASE / "weekly" / f"{slug}_{today.isoformat()}")
+
+        print(f"\n{'='*60}")
+        print(f"  QUANTUM REALITY CODES — Weekly Campaign Pipeline")
+        print(f"  Theme: {theme}")
+        print(f"  Date: {today.isoformat()}")
+        print(f"{'='*60}\n")
+
+        # Generate 7 days of core content
+        daily_data = []
+        codes_list = []
+        print("[1/5] Generating 7 days of core content (Wisdom → Intention → Code)...")
+        for day_num in range(7):
+            day_date = today + timedelta(days=day_num)
+            wisdom_data = self.wisdom.run(topic=theme, target_date=day_date)
+            intention_data = self.intention.run(wisdom_data=wisdom_data, topic=theme)
+            code_data = self.code.run(intention_data=intention_data)
+            daily_data.append({
+                "day": day_num + 1,
+                "date": day_date.isoformat(),
+                "wisdom": wisdom_data,
+                "intention": intention_data,
+                "code": code_data,
+            })
+            codes_list.append(code_data)
+            print(f"  Day {day_num + 1}: Code {code_data['reality_code']} — {intention_data['category_name']}")
+
+        # Save daily core data
+        self._save_json(daily_data, out_dir / "daily_core.json")
+
+        # Generate cards for each day
+        print("\n[2/5] Generating 7 shareable cards...")
+        cards_dir = self._ensure_dir(out_dir / "cards")
+        for day in daily_data:
+            card_html = self.card.run(
+                intention_data=day["intention"],
+                code_data=day["code"],
+                wisdom_data=day["wisdom"],
+                campaign_topic=theme
+            )
+            self._save_text(card_html, cards_dir / f"card_day{day['day']}.html")
+
+        # Generate community content (Telegram + Facebook) for each day
+        print("\n[3/5] Generating Telegram + Facebook posts for 7 days...")
+        community_dir = self._ensure_dir(out_dir / "community")
+        community_content = []
+        for day in daily_data:
+            tg = self.telegram.run(
+                intention_data=day["intention"],
+                code_data=day["code"],
+                wisdom_data=day["wisdom"],
+                campaign_topic=theme,
+                content_type="daily"
+            )
+            fb = self.facebook.run(
+                intention_data=day["intention"],
+                code_data=day["code"],
+                wisdom_data=day["wisdom"],
+                campaign_topic=theme,
+                content_type="daily"
+            )
+            community_content.append({
+                "day": day["day"],
+                "date": day["date"],
+                "telegram": tg,
+                "facebook": fb,
+            })
+        self._save_json(community_content, community_dir / "daily_posts.json")
+
+        # Generate weekly intro posts
+        tg_intro = self.telegram.run(
+            wisdom_data=daily_data[0]["wisdom"],
+            campaign_topic=theme,
+            content_type="weekly_intro"
+        )
+        fb_intro = self.facebook.run(
+            wisdom_data=daily_data[0]["wisdom"],
+            campaign_topic=theme,
+            content_type="weekly_theme"
+        )
+        self._save_json({"telegram": tg_intro, "facebook": fb_intro}, community_dir / "weekly_intro.json")
+
+        # Generate engagement posts
+        tg_engage = self.telegram.run(
+            code_data=daily_data[4]["code"],
+            campaign_topic=theme,
+            content_type="collective"
+        )
+        fb_engage = self.facebook.run(
+            campaign_topic=theme,
+            content_type="engagement"
+        )
+        self._save_json({"telegram": tg_engage, "facebook": fb_engage}, community_dir / "engagement.json")
+
+        # Generate 7-day challenge
+        print("\n[4/5] Generating 7-day challenge pack...")
+        challenge_data = self.challenge.run(
+            theme=theme,
+            codes=codes_list,
+            wisdom_data=daily_data[0]["wisdom"],
+            start_date=today
+        )
+        self._save_json(challenge_data, out_dir / "challenge.json")
+
+        # Generate blog + email + social
+        print("\n[5/5] Generating blog, email, and social content...")
+        blog_html = self.blog.run(
+            intention_data=daily_data[0]["intention"],
+            code_data=daily_data[0]["code"],
+            wisdom_data=daily_data[0]["wisdom"],
+            topic=theme
+        )
+        self._save_text(blog_html, out_dir / "blog.html")
+
+        email_html = self.email.run(
+            intention_data=daily_data[0]["intention"],
+            code_data=daily_data[0]["code"],
+            wisdom_data=daily_data[0]["wisdom"],
+            topic=theme
+        )
+        self._save_text(email_html, out_dir / "email.html")
+
+        social_data = self.social.run(
+            intention_data=daily_data[0]["intention"],
+            code_data=daily_data[0]["code"],
+            wisdom_data=daily_data[0]["wisdom"],
+            campaign_topic=theme
+        )
+        self._save_json(social_data, out_dir / "social.json")
+
+        # Save schedule summary
+        schedule = {
+            "theme": theme,
+            "start_date": today.isoformat(),
+            "days": [
+                {
+                    "day": d["day"],
+                    "date": d["date"],
+                    "code": d["code"]["reality_code"],
+                    "category": d["intention"]["category_name"],
+                    "content": [
+                        "daily_code_telegram",
+                        "daily_code_facebook",
+                        "shareable_card",
+                    ],
+                }
+                for d in daily_data
+            ],
+            "extras": [
+                "weekly_intro (Telegram + Facebook)",
+                "engagement_post (Telegram + Facebook)",
+                "7-day_challenge (both platforms)",
+                "blog_post",
+                "email_newsletter",
+                "social_media (IG, TikTok, X, YouTube)",
+            ],
+        }
+        self._save_json(schedule, out_dir / "schedule.json")
+
+        print(f"\n{'='*60}")
+        print(f"  Weekly campaign complete!")
+        print(f"  Theme: {theme}")
+        print(f"  Output: {out_dir}")
+        print(f"  Files: 7 daily posts, 7 cards, challenge, blog, email, social")
+        print(f"{'='*60}\n")
+
+        return {
+            "pipeline": "weekly",
+            "theme": theme,
+            "start_date": today.isoformat(),
+            "output_dir": str(out_dir),
+            "days": len(daily_data),
+        }
+
+    def _get_weekly_theme(self):
+        """Get the weekly theme from calendar config or default rotation."""
+        try:
+            calendar_path = Path(__file__).parent.parent / "config" / "calendar.json"
+            with open(calendar_path, "r") as f:
+                calendar = json.load(f)
+            today = date.today()
+            week_num = today.isocalendar()[1] % len(calendar.get("weekly_rotation", []))
+            return calendar["weekly_rotation"][week_num]["theme"]
+        except Exception:
+            # Default rotation
+            themes = [
+                "Core Alignment", "Abundance Activation",
+                "Energy Shield", "Healing Frequency",
+            ]
+            return themes[date.today().isocalendar()[1] % len(themes)]
+
+    # ─── Pipeline: Onboarding ───
+
+    def run_onboarding(self, platform="all"):
+        """Generate the full onboarding package."""
+        out_dir = self._ensure_dir(OUTPUT_BASE / "onboarding")
+
+        print(f"\n{'='*60}")
+        print(f"  QUANTUM REALITY CODES — Onboarding Package")
+        print(f"  Platform: {platform}")
+        print(f"{'='*60}\n")
+
+        result = self.onboarding.run(platform=platform)
+        self._save_json(result, out_dir / f"onboarding_{platform}.json")
+
+        # Save individual text files for easy copy-paste
+        if isinstance(result.get("welcome"), dict):
+            for plat, text in result["welcome"].items():
+                self._save_text(text, out_dir / f"welcome_{plat}.txt")
+        elif isinstance(result.get("welcome"), str):
+            self._save_text(result["welcome"], out_dir / f"welcome_{platform}.txt")
+
+        if isinstance(result.get("start_here"), dict):
+            for plat, text in result["start_here"].items():
+                self._save_text(text, out_dir / f"start_here_{plat}.txt")
+        elif isinstance(result.get("start_here"), str):
+            self._save_text(result["start_here"], out_dir / f"start_here_{platform}.txt")
+
+        faq = result.get("faq", {})
+        if faq.get("formatted_telegram"):
+            self._save_text(faq["formatted_telegram"], out_dir / "faq_telegram.txt")
+        if faq.get("formatted_facebook"):
+            self._save_text(faq["formatted_facebook"], out_dir / "faq_facebook.txt")
+
+        print(f"\n  Onboarding package saved to: {out_dir}")
+        print(f"{'='*60}\n")
+
+        return result
+
+    # ─── Router ───
+
     def route(self, command, args=None):
         """Route a command to the appropriate pipeline."""
         cmd = command.lower().strip()
@@ -357,6 +605,9 @@ class MasterAgent:
         elif cmd == "campaign":
             topic = args if args else "abundance"
             return self.run_campaign(topic)
+        elif cmd == "weekly":
+            theme = args if args else None
+            return self.run_weekly(theme)
         elif cmd == "card":
             category = args if args else None
             return self.run_card(category)
@@ -367,11 +618,14 @@ class MasterAgent:
             return self.run_blog(topic)
         elif cmd == "email":
             return self.run_email()
+        elif cmd == "onboarding":
+            platform = args if args else "all"
+            return self.run_onboarding(platform)
         elif cmd == "deploy":
             return self.run_deploy()
         else:
             print(f"\n  Unknown command: {cmd}")
-            print("  Available: daily, campaign, card, social, blog, email, deploy")
+            print("  Available: daily, weekly, campaign, card, social, blog, email, onboarding, deploy")
             return {"error": f"Unknown command: {cmd}"}
 
 

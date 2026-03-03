@@ -1,0 +1,28 @@
+NEW WEEK. NEW FREQUENCY. NEW REALITY.
+
+This week's theme: {{theme_upper}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"{{quote_text}}"
+— {{quote_ref}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{story}}
+
+HERE'S THE PLAN:
+
+Mon — New Reality Code + intention setting
+Tue — Meditation challenge (37-73 Hz frequency)
+Wed — Science behind {{theme_lower}}
+Thu — Share your manifestation story
+Fri — Group intention session (we all meditate on the same code)
+Sat — Invite someone new to the group
+Sun — Weekly reflection + results
+
+Are you in for this week? Comment "I'M IN" below and tag someone who needs this.
+
+Build your Reality Code: {{site}}
+
+#QuantumRealityCodes #{{theme_tag}} #WeeklyChallenge #Manifestation

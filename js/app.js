@@ -718,6 +718,27 @@ const SHARE_WISDOMS = [
   if (input && cc) cc.textContent = input.value.length + ' characters';
 }
 
+/* ─────────────────────────────────────────────
+   VIBRATIONAL ENCODING — Code Generation
+   A=1, B=2, ... Z=26. Digits add face value.
+   Code = total mod 1,000,000, zero-padded to 6 digits.
+   ───────────────────────────────────────────── */
+function generateCode(text) {
+  let total = 0;
+  const upper = text.toUpperCase();
+  for (let i = 0; i < upper.length; i++) {
+    const ch = upper.charCodeAt(i);
+    if (ch >= 65 && ch <= 90) {       // A-Z
+      total += ch - 64;              // A=1, B=2, ... Z=26
+    } else if (ch >= 48 && ch <= 57) { // 0-9
+      total += ch - 48;              // digit face value
+    }
+  }
+  state.vibrationalEncodingTotal = total;
+  const code = String(total % 1000000).padStart(6, '0');
+  return code;
+}
+
 function generateCustomCode() {
   dismissKeyboard();
   const input = document.getElementById('custom-input');
@@ -729,10 +750,13 @@ function generateCustomCode() {
   state.generatedCode = finalCode;
   state.lastIntentionText = fullIntention;
 
-  document.getElementById('code-vibrational encoding-val').textContent = state.vibrational encodingTotal;
+  document.getElementById('code-vibrational-encoding-val').textContent = state.vibrationalEncodingTotal;
   document.getElementById('code-number').textContent = finalCode;
   document.getElementById('code-section').classList.remove('hidden');
   document.getElementById('code-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Draw sacred geometry based on code
+  drawCodeGeometry(finalCode);
 
   // Scramble animation
   const codeEl = document.getElementById('code-number');
@@ -879,9 +903,12 @@ function generateRealityCode() {
   state.lastIntentionText = fullIntention;
 
   const codeEl = document.getElementById('code-number');
-  document.getElementById('code-vibrational encoding-val').textContent = state.vibrational encodingTotal;
+  document.getElementById('code-vibrational-encoding-val').textContent = state.vibrationalEncodingTotal;
   document.getElementById('code-section').classList.remove('hidden');
   document.getElementById('code-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Draw sacred geometry based on code
+  drawCodeGeometry(finalCode);
 
   // Scramble animation — random digits cycling before reveal
   let iterations = 0;
@@ -909,7 +936,7 @@ function buildShareMessage(opts) {
   const catLabel = getCategoryLabel();
   const code = (opts && opts.code) || state.generatedCode || '';
   const wisdom = randomShareWisdom();
-  return `My ${catLabel}Reality Code: ${code}\n\n${wisdom}\n\nThis code was generated through Reality Codes — structured intentions encoded through English Vibrational Encoding.\n\nIntend this code with me to amplify our connection to the throne of grace.\n\nCreate yours at quantumrealitycodes.com\n\n#IntenderCodes #IntendWithMe #Faith`;
+  return `My ${catLabel}Reality Code: ${code}\n\n${wisdom}\n\nThis code was generated through Quantum Reality Codes — structured intentions encoded through Vibrational Encoding.\n\nMeditate on this code with me to amplify our collective intention.\n\nCreate yours at quantumrealitycodes.com\n\n#QuantumRealityCodes #RealityCode #ManifestWithMe`;
 }
 
 function copyCode() {
@@ -934,8 +961,13 @@ function shareFacebook() {
 
 function shareTwitter() {
   const catLabel = getCategoryLabel();
-  const msg = `My ${catLabel}Reality Code: ${state.generatedCode} — Structured intention encoded through Vibrational Encoding. Intend with me. quantumrealitycodes.com #IntenderCodes`;
+  const msg = `My ${catLabel}Reality Code: ${state.generatedCode} — Structured intention encoded through Vibrational Encoding. Manifest with me. quantumrealitycodes.com #QuantumRealityCodes #RealityCode`;
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function shareTelegram() {
+  const msg = buildShareMessage();
+  window.open('https://t.me/share/url?url=' + encodeURIComponent('https://quantumrealitycodes.com') + '&text=' + encodeURIComponent(msg), '_blank');
 }
 
 function shareEmail() {
@@ -1504,14 +1536,251 @@ function toggleMeditation() {
       meditationRunning = false;
       if (btn) btn.textContent = 'Begin Again';
       if (label) label.textContent = 'Meditation complete';
-      toast('Meditation complete \u2014 go in peace', 4000);
+      toast('Meditation complete — carry this peace with you', 4000);
       launchConfetti();
+      saveMeditationSession(meditationDuration);
     }
   }, 1000);
 }
 
 /* ─────────────────────────────────────────────
-   15c. BACK TO TOP
+   15c. MEDITATION HISTORY
+   ───────────────────────────────────────────── */
+function saveMeditationSession(durationSec) {
+  const sessions = JSON.parse(localStorage.getItem('qrc_meditation_history') || '[]');
+  sessions.unshift({
+    date: new Date().toISOString(),
+    duration: durationSec,
+    minutes: Math.round(durationSec / 60)
+  });
+  // Keep last 100 sessions
+  if (sessions.length > 100) sessions.length = 100;
+  localStorage.setItem('qrc_meditation_history', JSON.stringify(sessions));
+  updateMeditationHistory();
+}
+
+function updateMeditationHistory() {
+  const sessions = JSON.parse(localStorage.getItem('qrc_meditation_history') || '[]');
+  const totalEl = document.getElementById('med-total-sessions');
+  const minsEl = document.getElementById('med-total-minutes');
+  const streakEl = document.getElementById('med-longest-streak');
+  const listEl = document.getElementById('meditation-history-list');
+  const actionsEl = document.getElementById('med-history-actions');
+
+  if (!totalEl) return;
+
+  const totalMinutes = sessions.reduce((s, e) => s + e.minutes, 0);
+  totalEl.textContent = sessions.length;
+  minsEl.textContent = totalMinutes;
+
+  // Calculate streak
+  let streak = 0, maxStreak = 0, lastDate = null;
+  const daySet = new Set();
+  sessions.forEach(s => {
+    const d = new Date(s.date);
+    daySet.add(d.toDateString());
+  });
+  const sorted = Array.from(daySet).sort((a, b) => new Date(b) - new Date(a));
+  if (sorted.length > 0) {
+    streak = 1;
+    for (let i = 1; i < sorted.length; i++) {
+      const diff = (new Date(sorted[i - 1]) - new Date(sorted[i])) / 86400000;
+      if (Math.round(diff) === 1) { streak++; } else break;
+    }
+    maxStreak = streak;
+  }
+  streakEl.textContent = maxStreak;
+
+  // Render last 20 sessions
+  if (sessions.length === 0) {
+    listEl.innerHTML = '<p style="text-align:center;opacity:0.5;font-size:0.78rem;padding:1rem 0;">Complete a meditation to start tracking</p>';
+    if (actionsEl) actionsEl.style.display = 'none';
+    return;
+  }
+  if (actionsEl) actionsEl.style.display = '';
+
+  const recent = sessions.slice(0, 20);
+  listEl.innerHTML = recent.map(s => {
+    const d = new Date(s.date);
+    const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const timeStr = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    return `<div class="med-history-item">
+      <span class="med-history-date">${dateStr} ${timeStr}</span>
+      <span class="med-history-duration">${s.minutes} min</span>
+    </div>`;
+  }).join('');
+}
+
+function clearMeditationHistory() {
+  if (!confirm('Clear all meditation history?')) return;
+  localStorage.removeItem('qrc_meditation_history');
+  updateMeditationHistory();
+  toast('Meditation history cleared');
+}
+
+/* ─────────────────────────────────────────────
+   15d. SACRED GEOMETRY CODE VISUALISATION
+   ───────────────────────────────────────────── */
+function drawCodeGeometry(code) {
+  const canvas = document.getElementById('code-geometry-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W / 2, cy = H / 2;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Derive parameters from code digits
+  const digits = code.split('').map(Number);
+  const sum = digits.reduce((a, b) => a + b, 0);
+  const sides = Math.max(3, (digits[0] || 3) + 3);  // 3-12 sides
+  const layers = Math.max(2, (digits[1] || 2) + 1);  // 2-10 layers
+  const rotOffset = (digits[2] || 0) * 6;            // rotation degrees
+  const hueShift = (digits[3] || 0) * 12;            // subtle hue variation
+
+  let animFrame;
+  let startTime = performance.now();
+
+  function render(timestamp) {
+    const elapsed = (timestamp - startTime) / 1000;
+    ctx.clearRect(0, 0, W, H);
+
+    // Slow rotation
+    const globalRot = elapsed * 0.15 + (rotOffset * Math.PI / 180);
+
+    // Outer glow
+    const grd = ctx.createRadialGradient(cx, cy, 20, cx, cy, 130);
+    grd.addColorStop(0, 'rgba(0,212,170,0.05)');
+    grd.addColorStop(0.5, 'rgba(100,181,246,0.03)');
+    grd.addColorStop(1, 'rgba(0,212,170,0)');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, W, H);
+
+    // Draw concentric geometry layers
+    for (let layer = layers; layer >= 1; layer--) {
+      const radius = 20 + (layer / layers) * 100;
+      const opacity = 0.12 + (layer / layers) * 0.25;
+      const pulse = 1 + Math.sin(elapsed * 0.8 + layer * 0.5) * 0.03;
+      const r = radius * pulse;
+      const rot = globalRot + (layer * Math.PI / sides) * 0.3;
+
+      // Polygon
+      ctx.beginPath();
+      for (let i = 0; i <= sides; i++) {
+        const angle = (i / sides) * Math.PI * 2 + rot;
+        const x = cx + Math.cos(angle) * r;
+        const y = cy + Math.sin(angle) * r;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+
+      const h = 170 + hueShift;
+      ctx.strokeStyle = `hsla(${h}, 80%, 60%, ${opacity})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Vertex dots
+      for (let i = 0; i < sides; i++) {
+        const angle = (i / sides) * Math.PI * 2 + rot;
+        const x = cx + Math.cos(angle) * r;
+        const y = cy + Math.sin(angle) * r;
+        ctx.beginPath();
+        ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${h}, 80%, 70%, ${opacity + 0.15})`;
+        ctx.fill();
+      }
+
+      // Connect to centre on innermost layers
+      if (layer <= 2) {
+        for (let i = 0; i < sides; i++) {
+          const angle = (i / sides) * Math.PI * 2 + rot;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(cx + Math.cos(angle) * r, cy + Math.sin(angle) * r);
+          ctx.strokeStyle = `hsla(${h}, 60%, 55%, ${opacity * 0.35})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Centre pulsing dot
+    const centreGlow = 4 + Math.sin(elapsed * 1.5) * 2;
+    const cGrd = ctx.createRadialGradient(cx, cy, 0, cx, cy, centreGlow * 3);
+    cGrd.addColorStop(0, 'rgba(0,212,170,0.6)');
+    cGrd.addColorStop(0.5, 'rgba(0,212,170,0.15)');
+    cGrd.addColorStop(1, 'rgba(0,212,170,0)');
+    ctx.fillStyle = cGrd;
+    ctx.fillRect(cx - centreGlow * 3, cy - centreGlow * 3, centreGlow * 6, centreGlow * 6);
+    ctx.beginPath();
+    ctx.arc(cx, cy, centreGlow, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,212,170,0.7)';
+    ctx.fill();
+
+    // Connecting arcs between layers (Flower of Life hint)
+    if (layers >= 3) {
+      const midR = 20 + (2 / layers) * 100;
+      for (let i = 0; i < sides; i++) {
+        const angle = (i / sides) * Math.PI * 2 + globalRot;
+        const arcX = cx + Math.cos(angle) * midR * 0.5;
+        const arcY = cy + Math.sin(angle) * midR * 0.5;
+        ctx.beginPath();
+        ctx.arc(arcX, arcY, midR * 0.35, 0, Math.PI * 2);
+        ctx.strokeStyle = `hsla(${170 + hueShift}, 50%, 55%, 0.08)`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+
+    animFrame = requestAnimationFrame(render);
+  }
+
+  // Cancel any previous geometry animation
+  if (window._geoAnimFrame) cancelAnimationFrame(window._geoAnimFrame);
+  animFrame = requestAnimationFrame(render);
+  window._geoAnimFrame = animFrame;
+}
+
+/* ─────────────────────────────────────────────
+   15e. WELCOME OVERLAY (first visit)
+   ───────────────────────────────────────────── */
+let welcomeStep = 0;
+const WELCOME_TOTAL = 4;
+
+function showWelcome() {
+  if (localStorage.getItem('qrc_welcomed')) return;
+  const overlay = document.getElementById('welcome-overlay');
+  if (overlay) overlay.style.display = 'flex';
+}
+
+function advanceWelcome() {
+  welcomeStep++;
+  if (welcomeStep >= WELCOME_TOTAL) {
+    dismissWelcome();
+    return;
+  }
+  document.querySelectorAll('.welcome-step').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.welcome-dot').forEach(el => el.classList.remove('active'));
+  const step = document.querySelector(`[data-welcome-step="${welcomeStep}"]`);
+  const dot = document.querySelector(`[data-dot="${welcomeStep}"]`);
+  if (step) step.classList.add('active');
+  if (dot) dot.classList.add('active');
+  const btn = document.getElementById('welcome-next-btn');
+  if (btn && welcomeStep === WELCOME_TOTAL - 1) btn.textContent = 'Get Started';
+}
+
+function dismissWelcome() {
+  localStorage.setItem('qrc_welcomed', '1');
+  const overlay = document.getElementById('welcome-overlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.4s ease';
+    setTimeout(() => overlay.style.display = 'none', 400);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   15f. BACK TO TOP
    ───────────────────────────────────────────── */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -1533,8 +1802,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initAudio();
   initBackToTop();
   updateIntentionStats();
+  updateMeditationHistory();
   setTimeout(() => { renderWisdoms(); renderJournal(); }, 100);
   navigate('home');
+
+  // First-visit welcome
+  setTimeout(showWelcome, 800);
 
   // Show native share button on supported devices
   if (navigator.share) {

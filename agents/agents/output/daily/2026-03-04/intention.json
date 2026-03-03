@@ -1,0 +1,71 @@
+{
+  "agent": "intention",
+  "timestamp": "2026-03-04T07:21:08.200952",
+  "category": "clarity_intuition",
+  "category_name": "Clarity & Intuition",
+  "category_quote": "The intuitive mind is a sacred gift and the rational mind is a faithful servant. — Albert Einstein",
+  "steps": [
+    {
+      "key": "stillness",
+      "title": "Stillness — Quiet the Mind",
+      "text": "I enter the space between thoughts — the field of pure awareness. Here, there is no confusion, no doubt. Only clarity. Only truth.",
+      "wisdom": {
+        "text": "In the midst of movement and chaos, keep stillness inside of you.",
+        "ref": "Deepak Chopra"
+      }
+    },
+    {
+      "key": "ask",
+      "title": "Inquiry — Ask the Field",
+      "text": "I ask not because I am lost, but because I am ready to see more clearly. Universe, illuminate the path that serves my highest good and the greatest good of all.",
+      "wisdom": {
+        "text": "The answer to every question you will ever have is already within you.",
+        "ref": "Inner Wisdom"
+      }
+    },
+    {
+      "key": "trust",
+      "title": "Trust — Follow Your Inner Knowing",
+      "text": "I trust the answers that arise from within. Even when they defy logic, I know that my intuition sees beyond what my rational mind can comprehend.",
+      "wisdom": {
+        "text": "Have the courage to follow your heart and intuition. They somehow already know what you truly want to become.",
+        "ref": "Steve Jobs"
+      }
+    },
+    {
+      "key": "closing",
+      "title": "Clarity — Walk in the Light of Knowing",
+      "text": "Clarity is my birthright. I reclaim it now. I see clearly, I think clearly, and I act with purpose and precision. The fog has lifted. And so it is.",
+      "wisdom": {
+        "text": "The only real valuable thing is intuition.",
+        "ref": "Albert Einstein"
+      }
+    }
+  ],
+  "full_intention": "I enter the space between thoughts — the field of pure awareness. Here, there is no confusion, no doubt. Only clarity. Only truth.\n\nI ask not because I am lost, but because I am ready to see more clearly. Universe, illuminate the path that serves my highest good and the greatest good of all.\n\nI trust the answers that arise from within. Even when they defy logic, I know that my intuition sees beyond what my rational mind can comprehend.\n\nClarity is my birthright. I reclaim it now. I see clearly, I think clearly, and I act with purpose and precision. The fog has lifted. And so it is.",
+  "topic": null,
+  "wisdom_data": {
+    "daily_quote": {
+      "text": "What you think, you become. What you feel, you attract. What you imagine, you create.",
+      "ref": "Buddha"
+    },
+    "category_wisdom": [
+      {
+        "text": "Your vision will become clear only when you can look into your own heart.",
+        "ref": "Carl Jung"
+      },
+      {
+        "text": "The only real valuable thing is intuition.",
+        "ref": "Albert Einstein"
+      },
+      {
+        "text": "In the midst of movement and chaos, keep stillness inside of you.",
+        "ref": "Deepak Chopra"
+      },
+      {
+        "text": "Trust yourself. You know more than you think you do.",
+        "ref": "Benjamin Spock"
+      }
+    ]
+  }
+}

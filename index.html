@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Quantum Reality Codes — Align with Infinite Possibility</title>
-  <meta name="description" content="Create structured intentions, generate your unique Reality Code through English Vibrational Encoding, and amplify your connection to Heaven with the 37-73 Hz creation frequency.">
+  <meta name="description" content="Create structured intentions, generate your unique Reality Code through Vibrational Encoding, and amplify your manifestation practice with the 37-73 Hz creation frequency.">
   <meta name="theme-color" content="#8a6cdb">
   <meta name="color-scheme" content="dark">
 
@@ -47,8 +47,8 @@
     "@type": "WebApplication",
     "name": "Quantum Reality Codes",
     "url": "https://quantumrealitycodes.com",
-    "description": "Create structured intentions, generate your unique Reality Code through English Vibrational Encoding, and amplify your connection to Heaven.",
-    "applicationCategory": "ReligiousApp",
+    "description": "Create structured intentions, generate your unique Reality Code through Vibrational Encoding, and amplify your manifestation practice.",
+    "applicationCategory": "LifestyleApplication",
     "operatingSystem": "Any",
     "offers": {
       "@type": "Offer",
@@ -224,8 +224,12 @@
     <div id="code-section" class="card hidden">
       <div class="code-reveal">
         <div class="code-msg">Your Frequency Has Been Encoded</div>
+        <canvas id="code-geometry-canvas" class="code-geometry-canvas" width="280" height="280"></canvas>
         <div class="code-number" id="code-number"></div>
-        <div class="code-vibrational encoding">Vibrational value: <span id="code-vibrational encoding-val"></span></div>
+        <div class="code-vibrational-encoding">Vibrational value: <span id="code-vibrational-encoding-val"></span></div>
+        <div class="code-frequency-bar" id="code-frequency-bar">
+          <div class="freq-wave" id="freq-wave"></div>
+        </div>
       </div>
 
       <div class="btn-center mt-1" style="margin-bottom:0.5rem;">
@@ -261,6 +265,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
           Twitter / X
         </button>
+        <button class="share-btn" onclick="shareTelegram()">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </button>
         <button class="share-btn" onclick="shareEmail()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
           Email
@@ -292,8 +300,8 @@
       </div>
       <p class="text-center mt-1">Intention is your direct connection to Source. The structure helps guide your heart, but the sincerity of your faith is what matters most.</p>
       <div class="wisdom">
-        Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.
-        <span class="wisdom-ref">— Deepak Chopra </span>
+        The universe is not outside of you. Look inside yourself; everything that you want, you already are.
+        <span class="wisdom-ref">— Rumi </span>
       </div>
     </div>
   </section>
@@ -330,7 +338,7 @@
           The universe is written in the language of mathematics and frequency.
           <span class="wisdom-ref">— Carl Sagan </span>
         </div>
-        <p>Your code becomes a concentrated form of your intention intention — a spiritual shorthand you can carry, meditate on, and share throughout the day.</p>
+        <p>Your code becomes a concentrated form of your intention — a vibrational shorthand you can carry, meditate on, and share throughout the day.</p>
       </div>
       <div class="how-step">
         <div class="how-num">3</div>
@@ -587,6 +595,20 @@
         <span class="wisdom-ref">— Rumi </span>
       </div>
     </div>
+
+    <div class="card">
+      <h3 class="card-title">Meditation History</h3>
+      <p class="card-sub">Track your meditation journey</p>
+      <div id="meditation-stats" class="meditation-stats">
+        <div class="med-stat"><span class="med-stat-val" id="med-total-sessions">0</span><span class="med-stat-label">Sessions</span></div>
+        <div class="med-stat"><span class="med-stat-val" id="med-total-minutes">0</span><span class="med-stat-label">Minutes</span></div>
+        <div class="med-stat"><span class="med-stat-val" id="med-longest-streak">0</span><span class="med-stat-label">Day Streak</span></div>
+      </div>
+      <div id="meditation-history-list" class="meditation-history-list"></div>
+      <div class="btn-center mt-1" id="med-history-actions" style="display:none;">
+        <button class="btn btn-outline" onclick="clearMeditationHistory()" style="font-size:0.72rem;border-color:rgba(180,80,80,0.3);color:#c06060;">Clear History</button>
+      </div>
+    </div>
   </section>
 
   <!-- ════════════════════════════════════════
@@ -660,8 +682,8 @@
         <h3 class="about-heading">Why Free?</h3>
         <p>Intention is a gift from the Universe &mdash; not a product to be monetised. We believe that every person, regardless of their financial situation, deserves access to tools that strengthen their manifestation practice. There are no premium tiers, no paywalls, no upsells. Every feature is available to everyone, always.</p>
 
-        <h3 class="about-heading">No Ads. No Tracking. No Compromise.</h3>
-        <p>We will never place advertisements on Quantum Reality Codes. Your intentions are sacred &mdash; they shouldn't sit next to banner ads. We don't use cookies, analytics, or tracking. Your intentions stay on your device and belong to you alone.</p>
+        <h3 class="about-heading">No Ads. Minimal Analytics. No Compromise.</h3>
+        <p>We will never place advertisements on Quantum Reality Codes. Your intentions are sacred &mdash; they shouldn't sit next to banner ads. We use minimal, privacy-respecting analytics to understand how the app is used &mdash; but your intentions stay on your device and belong to you alone. We never see, store, or transmit your personal content.</p>
 
         <h3 class="about-heading">How You Can Help</h3>
         <p>If Quantum Reality Codes has blessed your manifestation practice, you can help in two powerful ways:</p>
@@ -689,6 +711,20 @@
 
         <h3 class="about-heading">The Science</h3>
         <p>Reality Codes are grounded in real science — quantum observer effect, neuroplasticity, epigenetics, morphic resonance, NLP anchoring, and sacred mathematics. <a href="qrcodes-science/" style="color:var(--gold);">Explore the full research &rarr;</a></p>
+
+        <h3 class="about-heading">Join Our Community</h3>
+        <p>Connect with conscious creators who are actively manifesting through structured intention. Get daily Reality Codes, weekly challenges, collective meditation sessions, and support from a growing community.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0 0.5rem;justify-content:center;">
+          <a href="https://t.me/quantumrealitycodes" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#0088cc,#00aaee);color:#fff;padding:0.65rem 1.4rem;border-radius:24px;text-decoration:none;font-family:'Cinzel',serif;font-size:0.82rem;font-weight:600;letter-spacing:0.03em;transition:transform 0.2s,box-shadow 0.2s;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="width:18px;height:18px;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Join Telegram
+          </a>
+          <a href="https://facebook.com/groups/quantumrealitycodes" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#1877F2,#42A5F5);color:#fff;padding:0.65rem 1.4rem;border-radius:24px;text-decoration:none;font-family:'Cinzel',serif;font-size:0.82rem;font-weight:600;letter-spacing:0.03em;transition:transform 0.2s,box-shadow 0.2s;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="width:18px;height:18px;"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Join Facebook Group
+          </a>
+        </div>
+        <p style="font-size:0.8rem;opacity:0.6;margin-top:0.5rem;">Daily codes &bull; Weekly challenges &bull; Collective meditation &bull; Growth community</p>
       </div>
     </div>
   </section>
@@ -705,8 +741,8 @@
         <h3 style="color:var(--gold);font-family:'Cinzel',serif;margin:1.2rem 0 0.5rem;">Data Storage</h3>
         <p>All data — including your manifestation journal, streaks, and intention count — is stored <strong>locally on your device only</strong> using your browser's localStorage. No data is ever transmitted to any server. We have no database, no user accounts, and no way to access your intentions.</p>
 
-        <h3 style="color:var(--gold);font-family:'Cinzel',serif;margin:1.2rem 0 0.5rem;">No Cookies</h3>
-        <p>Quantum Reality Codes does not use cookies, tracking pixels, or any third-party analytics. Your browsing activity on this site is completely private.</p>
+        <h3 style="color:var(--gold);font-family:'Cinzel',serif;margin:1.2rem 0 0.5rem;">Minimal Analytics</h3>
+        <p>Quantum Reality Codes uses Google Analytics (GA4) to understand basic usage patterns such as page views and session counts. This helps us improve the app. GA4 may use cookies for this purpose. We do not use tracking pixels, retargeting, or any advertising trackers. Your intentions, journal entries, and personal content are never transmitted &mdash; they remain entirely on your device.</p>
 
         <h3 style="color:var(--gold);font-family:'Cinzel',serif;margin:1.2rem 0 0.5rem;">Progressive Web App</h3>
         <p>If you install Quantum Reality Codes as a PWA, it uses a service worker to cache assets for offline use. This is stored locally on your device and contains no personal information.</p>
@@ -742,6 +778,70 @@
   </footer>
 
 </div><!-- /app -->
+
+<!-- ── First-Visit Welcome Overlay ── -->
+<div id="welcome-overlay" class="welcome-overlay" style="display:none;">
+  <div class="welcome-card">
+    <div class="welcome-step active" data-welcome-step="0">
+      <div class="welcome-icon">
+        <svg viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.5" width="80" height="80">
+          <circle cx="40" cy="40" r="36" opacity="0.3"/>
+          <circle cx="40" cy="40" r="24" opacity="0.5"/>
+          <circle cx="40" cy="40" r="12"/>
+          <circle cx="40" cy="40" r="3" fill="var(--teal)"/>
+        </svg>
+      </div>
+      <h2 class="welcome-title">Welcome to Quantum Reality Codes</h2>
+      <p class="welcome-text">Transform your intentions into unique vibrational codes and amplify your manifestation practice through structured intention and sacred frequency.</p>
+    </div>
+    <div class="welcome-step" data-welcome-step="1">
+      <div class="welcome-icon">
+        <svg viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.5" width="80" height="80">
+          <rect x="15" y="20" width="50" height="40" rx="6" stroke-width="1.5"/>
+          <path d="M25 35h30M25 42h20M25 49h25" stroke-width="1.2" opacity="0.7"/>
+          <circle cx="55" cy="50" r="6" fill="var(--teal)" opacity="0.3"/>
+          <path d="M53 50l2 2 3-4" stroke="var(--indigo-deep)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h2 class="welcome-title">Build Your Intention</h2>
+      <p class="welcome-text">Choose from 12 categories — Core Alignment, Abundance, Healing, and more. Follow the guided structure to craft a powerful, focused intention.</p>
+    </div>
+    <div class="welcome-step" data-welcome-step="2">
+      <div class="welcome-icon">
+        <svg viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.5" width="80" height="80">
+          <text x="40" y="48" text-anchor="middle" font-family="Cinzel" font-size="22" fill="var(--teal)" stroke="none">5437</text>
+          <circle cx="40" cy="40" r="32"/>
+          <path d="M40 8v6M40 66v6M8 40h6M66 40h6" opacity="0.4"/>
+        </svg>
+      </div>
+      <h2 class="welcome-title">Generate Your Code</h2>
+      <p class="welcome-text">Your intention is encoded into a unique Reality Code using Vibrational Encoding (A=1, B=2...Z=26). This numerical signature carries your intention's frequency.</p>
+    </div>
+    <div class="welcome-step" data-welcome-step="3">
+      <div class="welcome-icon">
+        <svg viewBox="0 0 80 80" fill="none" stroke="var(--teal)" stroke-width="1.5" width="80" height="80">
+          <circle cx="40" cy="30" r="8"/>
+          <circle cx="22" cy="52" r="6" opacity="0.6"/>
+          <circle cx="58" cy="52" r="6" opacity="0.6"/>
+          <line x1="36" y1="36" x2="26" y2="47" opacity="0.4"/>
+          <line x1="44" y1="36" x2="54" y2="47" opacity="0.4"/>
+          <path d="M10 68c6-12 18-16 30-16s24 4 30 16" stroke-width="1.2" opacity="0.3"/>
+        </svg>
+      </div>
+      <h2 class="welcome-title">Share & Amplify</h2>
+      <p class="welcome-text">Share your code, meditate with the 37-73 Hz creation frequency, and join our community to amplify your intentions through collective resonance.</p>
+    </div>
+    <div class="welcome-nav">
+      <div class="welcome-dots">
+        <span class="welcome-dot active" data-dot="0"></span>
+        <span class="welcome-dot" data-dot="1"></span>
+        <span class="welcome-dot" data-dot="2"></span>
+        <span class="welcome-dot" data-dot="3"></span>
+      </div>
+      <button class="btn btn-teal welcome-next-btn" id="welcome-next-btn" onclick="advanceWelcome()">Next</button>
+    </div>
+  </div>
+</div>
 
 <!-- ── Back to Top ── -->
 <button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
