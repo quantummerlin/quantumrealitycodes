@@ -29,6 +29,93 @@ function icon(name, cls) {
   return `<span class="icon ${cls || ''}">${ICONS[name] || ''}</span>`;
 }
 
+/* ── Application State ── */
+const state = {
+  selectedCategory: null,
+  currentStep: 0,
+  stepData: {},
+  vibrationalEncodingTotal: 0,
+  generatedCode: null,
+  lastIntentionText: ''
+};
+
+/* ─────────────────────────────────────────────
+   NAVIGATION
+   ───────────────────────────────────────────── */
+function navigate(pageName) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + pageName);
+  if (target) target.classList.add('active');
+
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-page') === pageName);
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (history.replaceState) {
+    history.replaceState(null, '', pageName === 'home' ? '/' : '#' + pageName);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TOAST NOTIFICATIONS
+   ───────────────────────────────────────────── */
+function toast(message, duration) {
+  duration = duration || 3000;
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => el.classList.remove('show'), duration);
+}
+
+/* ─────────────────────────────────────────────
+   HTML ESCAPING
+   ───────────────────────────────────────────── */
+function escapeHTML(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
+/* ─────────────────────────────────────────────
+   DAILY WISDOM
+   ───────────────────────────────────────────── */
+function setDailyWisdom() {
+  const now = new Date();
+  const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+  const verse = DAILY_VERSES[dayOfYear % DAILY_VERSES.length];
+  const textEl = document.getElementById('daily-text');
+  const refEl = document.getElementById('daily-ref');
+  if (textEl) textEl.textContent = verse.text;
+  if (refEl) refEl.textContent = '— ' + verse.ref;
+}
+
+/* ─────────────────────────────────────────────
+   SHARE HELPERS
+   ───────────────────────────────────────────── */
+function getCategoryLabel() {
+  if (state.selectedCategory && state.selectedCategory.name) {
+    return state.selectedCategory.name + ' ';
+  }
+  return '';
+}
+
+function randomShareWisdom() {
+  return SHARE_WISDOMS[Math.floor(Math.random() * SHARE_WISDOMS.length)];
+}
+
+/* ── Share wisdom quotes ── */
+const SHARE_WISDOMS = [
+  '"What you seek is seeking you." \u2014 Rumi',
+  '"Assume the feeling of your wish fulfilled." \u2014 Neville Goddard',
+  '"Whatever the mind can conceive and believe, it can achieve." \u2014 Napoleon Hill',
+  '"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration." \u2014 Nikola Tesla',
+  '"Imagination is more important than knowledge." \u2014 Albert Einstein',
+  '"The All is Mind; the Universe is Mental." \u2014 Hermetic Principle',
+];
+
 /* ─────────────────────────────────────────────
    1. DATA — Categories, Wisdoms, Daily Verses
    ───────────────────────────────────────────── */
@@ -681,6 +768,24 @@ const DAILY_VERSES = [
   {text:"The lips of wisdom are closed, except to the ears of understanding.",ref:"Hermetic Principle"},
   {text:"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",ref:"Albert Einstein"},
 ];
+
+/* ─────────────────────────────────────────────
+   CATEGORY SELECTION
+   ───────────────────────────────────────────── */
+function selectCategory(catId) {
+  dismissKeyboard();
+  const cat = CATEGORIES.find(c => c.id === catId);
+  if (!cat) return;
+  state.selectedCategory = cat;
+  state.currentStep = 0;
+  state.stepData = {};
+
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('selected'));
+  const selected = document.querySelector(`[data-cat="${catId}"]`);
+  if (selected) selected.classList.add('selected');
+
+  document.getElementById('custom-section').classList.add('hidden');
+  document.getElementById('builder-section').classList.remove('hidden');
   document.getElementById('preview-section').classList.add('hidden');
   document.getElementById('code-section').classList.add('hidden');
   renderStep();
@@ -703,18 +808,7 @@ function selectCustomIntention() {
 
   const input = document.getElementById('custom-input');
   const cc = document.getElementById('custom-char-count');
-  if (input) {
-    input.value = '';
-/* ── Share wisdom quotes ── */
-const SHARE_WISDOMS = [
-  '"What you seek is seeking you." \u2014 Rumi',
-  '"Assume the feeling of your wish fulfilled." \u2014 Neville Goddard',
-  '"Whatever the mind can conceive and believe, it can achieve." \u2014 Napoleon Hill',
-  '"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration." \u2014 Nikola Tesla',
-  '"Imagination is more important than knowledge." \u2014 Albert Einstein',
-  '"The All is Mind; the Universe is Mental." \u2014 Hermetic Principle',
-];
-  const cc = document.getElementById('custom-char-count');
+  if (input) input.value = '';
   if (input && cc) cc.textContent = input.value.length + ' characters';
 }
 
