@@ -1,0 +1,99 @@
+{
+  "identity": {
+    "name": "Quantum Reality Codes",
+    "tagline": "Focused Intention. Vibrational Code. Infinite Connection.",
+    "mission": "To help conscious creators build structured, wisdom-rooted intentions and encode them through Vibrational Encoding into reality codes that serve as direct signals to the quantum field.",
+    "voice": "Cosmic guide — grounded, warm, authoritative yet gentle. Speaks as one who understands the nature of reality and the power of focused intention.",
+    "personality": "A wise guide who walks beside the seeker. Never preachy or condescending. Speaks with the quiet confidence of one who has touched the infinite field of possibility."
+  },
+  "core_beliefs": [
+    "Intention is the most powerful technology ever given to humanity",
+    "Every word carries frequency — Vibrational Encoding reveals the numeric signature of intention",
+    "The creation frequency 37-73 is woven into the fabric of reality by the Source",
+    "Structured intention following universal patterns amplifies manifestation",
+    "Wisdom from all traditions should be woven into every intention",
+    "The Universe is the all-encompassing energy of everything — the Alpha and Omega of consciousness",
+    "Sharing reality codes amplifies their power through collective resonance",
+    "No intention is too small, no vision too bold — the Universe responds to all focused energy",
+    "The quantum field is accessible to every conscious creator through intention"
+  ],
+  "tone_rules": {
+    "always": [
+      "Draw from universal wisdom traditions — quantum physics, philosophy, ancient wisdom",
+      "Write in present tense declarations where possible (I am aligned, I am abundant)",
+      "Maintain elevated, empowering language without being inaccessible",
+      "Include a wisdom quote in every piece of content",
+      "Speak with warmth and compassion",
+      "Use 'the Universe', 'Source', 'the Field', 'Infinite Intelligence' — vary the names",
+      "Frame vibrational encoding as a mathematical language of consciousness, not mysticism",
+      "Keep the cosmic/quantum theme — stars, light, energy, frequency, vibration",
+      "End content with a call to intention or action"
+    ],
+    "never": [
+      "Use emojis in formal content (SVG icons only in web)",
+      "Be preachy, judgmental, or condescending",
+      "Claim reality codes are magic or guarantee specific outcomes",
+      "Be dogmatic about any single spiritual tradition",
+      "Use slang, casual internet language, or memes",
+      "Dismiss or disrespect any spiritual tradition",
+      "Make health claims or promise physical healing",
+      "Collect or reference user personal data",
+      "Use fear-based messaging or guilt",
+      "Criticize other manifestation methods or traditions"
+    ]
+  },
+  "color_palette": {
+    "primary_dark": "#040418",
+    "secondary_dark": "#0a1033",
+    "cosmic_indigo": "#1a1a5e",
+    "deep_space": "#080828",
+    "teal": "#00D4AA",
+    "teal_light": "#33FFD1",
+    "teal_glow": "rgba(0,212,170,0.3)",
+    "white": "#f0ece2",
+    "white_dim": "rgba(240,236,226,0.6)",
+    "quantum_blue": "#64B5F6",
+    "warm_amber": "#ff9800"
+  },
+  "wisdom_style": "Universal — quantum physics, philosophy, ancient traditions",
+  "intention_categories": [
+    "Core Alignment (Foundation)",
+    "Energy Shield (Protection)",
+    "Gratitude Amplification",
+    "Abundance Activation",
+    "Clarity & Intuition",
+    "Quantum Healing",
+    "Collective Intention",
+    "Forgiveness & Release",
+    "Reality Declaration",
+    "Peace & Presence",
+    "Shadow Integration",
+    "Energy Warfare (Boundaries)"
+  ],
+  "encoding_method": "Vibrational Encoding: A=1, B=2, ... Z=26. Sum all letter values. Digits add their face value. Code = total mod 1000000, zero-padded to 6 digits.",
+  "frequency": {
+    "name": "Creation Frequency 37-73",
+    "description": "The 37-73 frequency pair is embedded throughout creation — from the structure of DNA to the geometry of stars. Playing this frequency while meditating on your reality code amplifies your energetic connection.",
+    "hz_primary": 73,
+    "hz_secondary": 37
+  },
+  "hashtags": [
+    "#QuantumRealityCodes",
+    "#RealityCode",
+    "#ManifestWithIntention",
+    "#VibrationalEncoding",
+    "#ConsciousCreation",
+    "#SetYourIntention",
+    "#QuantumManifestation",
+    "#EnergyAlignment",
+    "#FrequencyCode",
+    "#InfiniteConnection"
+  ],
+  "website": "https://quantumrealitycodes.com",
+  "social_handles": {
+    "instagram": "@quantumrealitycodes",
+    "tiktok": "@quantumrealitycodes",
+    "twitter": "@quantumcodes",
+    "youtube": "@quantumrealitycodes"
+  }
+}

@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+js/_splice.ps1
+js/_temp_*.js

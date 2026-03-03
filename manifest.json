@@ -1,0 +1,91 @@
+{
+  "name": "Quantum Reality Codes — Align with Infinite Possibility",
+  "short_name": "Reality Codes",
+  "description": "Create structured manifestation intentions, generate your unique Reality Code through vibrational encoding, and amplify your alignment with the 37-73 Hz creation frequency.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#040418",
+  "theme_color": "#00D4AA",
+  "lang": "en",
+  "categories": ["lifestyle", "education"],
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Create Intention",
+      "short_name": "Create",
+      "description": "Build a new structured intention",
+      "url": "/?page=home",
+      "icons": [{"src": "icons/icon-96x96.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "Manifestation Journal",
+      "short_name": "Journal",
+      "description": "View your saved intentions",
+      "url": "/?page=journal",
+      "icons": [{"src": "icons/icon-96x96.png", "sizes": "96x96"}]
+    }
+  ]
+}

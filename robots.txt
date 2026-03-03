@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://quantumrealitycodes.com/sitemap.xml
+
+# Quantum Reality Codes — quantumrealitycodes.com
