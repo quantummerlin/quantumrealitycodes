@@ -115,20 +115,13 @@
       <h1 class="site-title">Quantum Reality Codes</h1>
       <p class="site-tagline">Align with Infinite Possibility</p>
     </div>
-    <nav class="site-nav" role="navigation" aria-label="Main navigation">
-      <button class="nav-btn active" data-page="home" onclick="navigate('home')" aria-label="Create an intention">Create</button>
-      <button class="nav-btn" data-page="how" onclick="navigate('how')" aria-label="How it works">How It Works</button>
-      <button class="nav-btn" data-page="wisdom" onclick="navigate('wisdom')" aria-label="Wisdom library">Wisdom</button>
-      <button class="nav-btn" data-page="amplify" onclick="navigate('amplify')" aria-label="Amplify your intention">Amplify</button>
-      <button class="nav-btn" data-page="journal" onclick="navigate('journal');renderJournal()" aria-label="Manifestation journal">Journal</button>
-      <button class="nav-btn" data-page="about" onclick="navigate('about')" aria-label="About Quantum Reality Codes">About</button>
-    </nav>
   </header>
 
   <!-- ════════════════════════════════════════
        PAGE: HOME — Intention Builder
        ════════════════════════════════════════ -->
   <main role="main">
+  <div id="pages-container" class="pages-container">
   <section id="page-home" class="page active" aria-label="Intention Builder">
 
     <!-- Intention Stats Banner -->
@@ -764,7 +757,18 @@
     </div>
   </section>
 
+  </div><!-- /pages-container -->
   </main>
+
+  <!-- ── Bottom Tab Bar (Apple-style) ── -->
+  <nav class="tab-bar" id="tab-bar" role="navigation" aria-label="Main navigation">
+    <button class="tab-btn active" data-page="home" onclick="navigate('home')" aria-label="Create"><span class="tab-icon" id="tab-icon-home"></span><span class="tab-label">Create</span></button>
+    <button class="tab-btn" data-page="how" onclick="navigate('how')" aria-label="How It Works"><span class="tab-icon" id="tab-icon-how"></span><span class="tab-label">How</span></button>
+    <button class="tab-btn" data-page="wisdom" onclick="navigate('wisdom')" aria-label="Wisdom"><span class="tab-icon" id="tab-icon-wisdom"></span><span class="tab-label">Wisdom</span></button>
+    <button class="tab-btn" data-page="amplify" onclick="navigate('amplify')" aria-label="Amplify"><span class="tab-icon" id="tab-icon-amplify"></span><span class="tab-label">Amplify</span></button>
+    <button class="tab-btn" data-page="journal" onclick="navigate('journal');renderJournal()" aria-label="Journal"><span class="tab-icon" id="tab-icon-journal"></span><span class="tab-label">Journal</span></button>
+    <button class="tab-btn" data-page="about" onclick="navigate('about')" aria-label="About"><span class="tab-icon" id="tab-icon-about"></span><span class="tab-label">About</span></button>
+  </nav>
 
   <!-- ── Footer ── -->
   <footer class="site-footer" role="contentinfo">

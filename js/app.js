@@ -22,6 +22,13 @@ const ICONS = {
   bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
   hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 00-4 0v5"/><path d="M14 10V4a2 2 0 00-4 0v6"/><path d="M10 10.5V6a2 2 0 00-4 0v8"/><path d="M18 8a2 2 0 014 0v6a8 8 0 01-8 8h-2c-2.5 0-4.5-1-6.2-2.8L3 16"/></svg>',
   crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 16l2-12 4 5 2-6 2 6 4-5 2 12z"/></svg>',
+  // Tab bar icons
+  create: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>',
+  howit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>',
+  music: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+  journal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+  info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
 };
 
 /* ── Helper to wrap icon in a span ── */
@@ -40,19 +47,21 @@ const state = {
 };
 
 /* ─────────────────────────────────────────────
-   NAVIGATION
+   NAVIGATION — Horizontal swipe with scroll-snap
    ───────────────────────────────────────────── */
-function navigate(pageName) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const target = document.getElementById('page-' + pageName);
-  if (target) target.classList.add('active');
+const PAGE_ORDER = ['home','how','wisdom','amplify','journal','about'];
 
-  document.querySelectorAll('.nav-btn').forEach(btn => {
+function navigate(pageName) {
+  const idx = PAGE_ORDER.indexOf(pageName);
+  if (idx === -1) return;
+  const container = document.getElementById('pages-container');
+  if (container) {
+    const pageW = container.offsetWidth;
+    container.scrollTo({ left: pageW * idx, behavior: 'smooth' });
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-page') === pageName);
   });
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
   if (history.replaceState) {
     history.replaceState(null, '', pageName === 'home' ? '/' : '#' + pageName);
   }
@@ -814,8 +823,8 @@ function selectCustomIntention() {
 
 /* ─────────────────────────────────────────────
    VIBRATIONAL ENCODING — Code Generation
-   A=1, B=2, ... Z=26. Digits add face value.
-   Code = total mod 1,000,000, zero-padded to 6 digits.
+   English Simple Gematria: A=1, B=2, ... Z=26.
+   Digits add face value. Result is the raw total.
    ───────────────────────────────────────────── */
 function generateCode(text) {
   let total = 0;
@@ -829,7 +838,7 @@ function generateCode(text) {
     }
   }
   state.vibrationalEncodingTotal = total;
-  const code = String(total % 1000000).padStart(6, '0');
+  const code = String(total);
   return code;
 }
 
@@ -2032,6 +2041,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // First-visit welcome
   setTimeout(showWelcome, 800);
+
+  // Init tab bar icons
+  const tabIcons = {home:'create',how:'howit',wisdom:'book',amplify:'music',journal:'journal',about:'info'};
+  Object.entries(tabIcons).forEach(([page,ic])=>{
+    const el=document.getElementById('tab-icon-'+page);
+    if(el) el.innerHTML=ICONS[ic]||'';
+  });
+
+  // Sync horizontal scroll position to tab bar
+  const pc = document.getElementById('pages-container');
+  if (pc) {
+    let scrollTimer;
+    pc.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const idx = Math.round(pc.scrollLeft / pc.offsetWidth);
+        const pageName = PAGE_ORDER[idx] || 'home';
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-page') === pageName);
+        });
+        if (history.replaceState) {
+          history.replaceState(null, '', pageName === 'home' ? '/' : '#' + pageName);
+        }
+      }, 100);
+    });
+  }
 
   // Show native share button on supported devices
   if (navigator.share) {
