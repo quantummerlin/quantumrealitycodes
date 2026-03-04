@@ -1149,25 +1149,41 @@ let timerStart = 0, timerInterval = null;
    11. WISDOM LIBRARY (with Favorites)
    ───────────────────────────────────────────── */
 let activeTag = 'all';
+let activeAuthor = '';
+
+/* Build a unique ID for each wisdom quote (category + index) */
+function getWisdomUid(cat, index) { return cat + '-' + index; }
 
 function getFavorites() {
   try { return JSON.parse(localStorage.getItem('wisdomFavorites') || '[]'); } catch { return []; }
 }
 function saveFavorites(favs) { localStorage.setItem('wisdomFavorites', JSON.stringify(favs)); }
-function isFavorite(ref) { return getFavorites().includes(ref); }
-function toggleFavorite(ref, event) {
+function isFavorite(uid) { return getFavorites().includes(uid); }
+function toggleFavorite(uid, event) {
   if (event) event.stopPropagation();
   let favs = getFavorites();
-  if (favs.includes(ref)) favs = favs.filter(f => f !== ref);
-  else favs.push(ref);
+  if (favs.includes(uid)) favs = favs.filter(f => f !== uid);
+  else favs.push(uid);
   saveFavorites(favs);
   renderWisdoms(document.getElementById('wisdom-search')?.value.trim().toLowerCase() || '');
-  toast(favs.includes(ref) ? 'Added to favorites' : 'Removed from favorites');
+  toast(favs.includes(uid) ? 'Added to favorites' : 'Removed from favorites');
 }
 
 function filterWisdoms(tag) {
   activeTag = tag;
+  activeAuthor = '';
   document.querySelectorAll('.tag').forEach(t => t.classList.toggle('active', t.dataset.tag === tag));
+  renderWisdoms();
+}
+
+function filterByAuthor(author, event) {
+  if (event) event.stopPropagation();
+  activeAuthor = (activeAuthor === author) ? '' : author;
+  /* Clear tag highlights when filtering by author */
+  if (activeAuthor) {
+    activeTag = 'all';
+    document.querySelectorAll('.tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
+  }
   renderWisdoms();
 }
 
@@ -1182,34 +1198,52 @@ function renderWisdoms(query = '') {
   let results = [];
 
   if (activeTag === 'all') {
-    for (const cat in WISDOM_DB) WISDOM_DB[cat].forEach(s => results.push({ ...s, cat }));
+    for (const cat in WISDOM_DB) WISDOM_DB[cat].forEach((s, i) => results.push({ ...s, cat, uid: getWisdomUid(cat, i) }));
   } else if (activeTag === 'favorites') {
     const favs = getFavorites();
-    for (const cat in WISDOM_DB) WISDOM_DB[cat].forEach(s => { if (favs.includes(s.ref)) results.push({ ...s, cat }); });
+    for (const cat in WISDOM_DB) WISDOM_DB[cat].forEach((s, i) => {
+      const uid = getWisdomUid(cat, i);
+      if (favs.includes(uid)) results.push({ ...s, cat, uid });
+    });
   } else if (WISDOM_DB[activeTag]) {
-    results = WISDOM_DB[activeTag].map(s => ({ ...s, cat: activeTag }));
+    results = WISDOM_DB[activeTag].map((s, i) => ({ ...s, cat: activeTag, uid: getWisdomUid(activeTag, i) }));
+  }
+
+  /* Filter by author if one is selected */
+  if (activeAuthor) {
+    results = results.filter(s => s.ref === activeAuthor);
   }
 
   if (query) {
     results = results.filter(s => s.text.toLowerCase().includes(query) || s.ref.toLowerCase().includes(query));
   }
 
+  /* Show active author filter banner */
+  if (activeAuthor) {
+    const banner = document.createElement('div');
+    banner.className = 'author-filter-banner';
+    banner.innerHTML = `Showing quotes by <strong>${escapeHTML(activeAuthor)}</strong> <button class="author-filter-clear" onclick="filterByAuthor('${escapeHTML(activeAuthor)}', event)" aria-label="Clear author filter">&times;</button>`;
+    container.appendChild(banner);
+  }
+
   if (results.length === 0) {
-    container.innerHTML = '<p class="text-center text-dim mt-2">No wisdoms found. Try another search.</p>';
+    container.innerHTML += '<p class="text-center text-dim mt-2">No wisdoms found. Try another search.</p>';
     return;
   }
 
   results.forEach(s => {
-    const fav = isFavorite(s.ref);
+    const fav = isFavorite(s.uid);
+    const safeUid = escapeHTML(s.uid);
+    const safeRef = escapeHTML(s.ref);
     const div = document.createElement('div');
     div.className = 'wisdom-card';
-    div.onclick = () => { navigator.clipboard.writeText(`"${s.text}" — ${s.ref} `); toast('Wisdom copied'); };
+    div.onclick = () => { navigator.clipboard.writeText(`"${s.text}" — ${s.ref}`); toast('Wisdom copied'); };
     div.innerHTML = `
       <div class="wisdom-card-top">
-        <div class="wisdom-card-text">"${s.text}"</div>
-        <button class="fav-btn ${fav ? 'active' : ''}" onclick="toggleFavorite('${s.ref}', event)" aria-label="${fav ? 'Remove from favorites' : 'Add to favorites'}" title="${fav ? 'Remove from favorites' : 'Add to favorites'}">${fav ? '★' : '☆'}</button>
+        <div class="wisdom-card-text">"${escapeHTML(s.text)}"</div>
+        <button class="fav-btn ${fav ? 'active' : ''}" onclick="toggleFavorite('${safeUid}', event)" aria-label="${fav ? 'Remove from favorites' : 'Add to favorites'}" title="${fav ? 'Remove from favorites' : 'Add to favorites'}">${fav ? '★' : '☆'}</button>
       </div>
-      <div class="wisdom-card-ref">— ${s.ref} </div>
+      <div class="wisdom-card-ref"><a href="javascript:void(0)" class="author-link" onclick="filterByAuthor('${safeRef}', event)" title="Show all quotes by ${safeRef}">— ${safeRef}</a></div>
       <div class="wisdom-copy-hint">Tap to copy</div>
     `;
     container.appendChild(div);

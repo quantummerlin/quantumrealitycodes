@@ -581,20 +581,37 @@ body{
   cursor:pointer;transition:var(--transition);background:rgba(8,5,25,0.45);
 }
 .tag:hover,.tag.active{color:var(--teal);border-color:var(--teal-dim);background:rgba(0,212,170,0.06)}
-.scripture-card{
+.wisdom-card{
   background:rgba(4,4,18,0.45);border:1px solid rgba(0,212,170,0.08);
   border-radius:var(--radius-md);padding:0.85rem 1.1rem;margin-bottom:0.6rem;
   cursor:pointer;transition:var(--transition);
 }
-.scripture-card:hover{border-color:rgba(0,212,170,0.3);background:rgba(0,212,170,0.03);transform:translateX(3px)}
-.scripture-card-text{font-style:italic;color:var(--teal-light);font-size:0.85rem;line-height:1.65;margin-bottom:0.35rem}
-.scripture-card-ref{font-family:'Cinzel',serif;font-size:0.68rem;color:var(--teal-dim);letter-spacing:0.05em;text-align:right}
-.scripture-copy-hint{font-size:0.6rem;color:var(--text-dim);text-align:right;margin-top:0.15rem;opacity:0;transition:var(--transition)}
-.scripture-card:hover .scripture-copy-hint{opacity:1}
+.wisdom-card:hover{border-color:rgba(0,212,170,0.3);background:rgba(0,212,170,0.03);transform:translateX(3px)}
+.wisdom-card-text{font-style:italic;color:var(--teal-light);font-size:0.85rem;line-height:1.65;margin-bottom:0.35rem}
+.wisdom-card-ref{font-family:'Cinzel',serif;font-size:0.68rem;color:var(--teal-dim);letter-spacing:0.05em;text-align:right}
+.wisdom-copy-hint{font-size:0.6rem;color:var(--text-dim);text-align:right;margin-top:0.15rem;opacity:0;transition:var(--transition)}
+.wisdom-card:hover .wisdom-copy-hint{opacity:1}
 
-/* ── Scripture Favorite ── */
-.scripture-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem}
-.scripture-card-top .scripture-card-text{flex:1}
+/* ── Wisdom Favorite & Author Link ── */
+.wisdom-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem}
+.wisdom-card-top .wisdom-card-text{flex:1}
+.author-link{
+  color:var(--teal-dim);text-decoration:none;transition:var(--transition);
+  border-bottom:1px dotted rgba(0,212,170,0.2);padding-bottom:1px;
+}
+.author-link:hover{color:var(--teal);border-bottom-color:var(--teal)}
+.author-filter-banner{
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  background:rgba(0,212,170,0.06);border:1px solid rgba(0,212,170,0.15);
+  border-radius:var(--radius-md);padding:0.5rem 1rem;margin-bottom:0.8rem;
+  font-family:'Cinzel',serif;font-size:0.72rem;color:var(--teal-light);
+  letter-spacing:0.04em;
+}
+.author-filter-clear{
+  background:none;border:none;color:var(--text-dim);cursor:pointer;
+  font-size:1.1rem;line-height:1;padding:0 0.2rem;transition:var(--transition);
+}
+.author-filter-clear:hover{color:var(--teal)}
 .fav-btn{
   background:none;border:none;cursor:pointer;padding:0.2rem;
   color:var(--text-dim);transition:var(--transition);flex-shrink:0;
