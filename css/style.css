@@ -301,14 +301,18 @@ body{
 .step-icon svg{width:100%;height:100%}
 .step-title{font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--teal-light);letter-spacing:0.04em}
 .step-guidance{font-size:0.85rem;color:var(--text-dim);margin-bottom:0.75rem;line-height:1.6}
-.use-scripture-btn{
+.step-actions{display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;align-items:center}
+.btn-sm{font-size:0.68rem;padding:0.28rem 0.7rem;border-radius:20px;font-family:'Cinzel',serif;letter-spacing:0.04em;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:0.35rem}
+.btn-teal.btn-sm{color:var(--teal);background:rgba(0,212,170,0.10);border:1px solid rgba(0,212,170,0.25)}
+.btn-teal.btn-sm:hover{background:rgba(0,212,170,0.18);border-color:var(--teal-light)}
+.use-wisdom-btn{
   display:inline-flex;align-items:center;gap:0.35rem;
   font-size:0.68rem;font-family:'Cinzel',serif;letter-spacing:0.06em;
   color:var(--teal-dim);background:rgba(0,212,170,0.06);
   border:1px solid rgba(0,212,170,0.18);border-radius:20px;
-  padding:0.25rem 0.7rem;cursor:pointer;transition:var(--transition);margin-top:0.4rem;
+  padding:0.25rem 0.7rem;cursor:pointer;transition:var(--transition);
 }
-.use-scripture-btn:hover{color:var(--teal);border-color:var(--teal);background:rgba(0,212,170,0.12)}
+.use-wisdom-btn:hover{color:var(--teal);border-color:var(--teal);background:rgba(0,212,170,0.12)}
 
 /* ── Textarea ── */
 .intention-input{
