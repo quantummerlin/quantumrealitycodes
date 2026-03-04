@@ -67,7 +67,7 @@ body{
 
 /* ── Layered Background ── */
 #bg-nebula{
-  position:fixed;inset:0;z-index:0;
+  position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
     radial-gradient(ellipse at 20% 50%,rgba(123,94,167,0.3) 0%,transparent 60%),
     radial-gradient(ellipse at 80% 20%,rgba(0,212,170,0.1) 0%,transparent 50%),
@@ -76,18 +76,18 @@ body{
   filter:brightness(0.38) saturate(1.4);
 }
 #bg-stars{
-  position:fixed;inset:0;z-index:1;
+  position:fixed;inset:0;z-index:1;pointer-events:none;
   background:url('../images/stars.png') repeat;
   opacity:0.7;
 }
 #bg-twinkle{
-  position:fixed;inset:0;z-index:2;
+  position:fixed;inset:0;z-index:2;pointer-events:none;
   background:url('../images/twinkling.png') repeat;
   animation:twinkleMove 180s linear infinite;
   opacity:0.5;
 }
 #bg-geometry{
-  position:fixed;inset:0;z-index:3;
+  position:fixed;inset:0;z-index:3;pointer-events:none;
   background:
     repeating-conic-gradient(from 0deg at 50% 50%,
       rgba(212,175,55,0.03) 0deg,transparent 30deg,
@@ -102,7 +102,7 @@ body{
   animation:geoRotate 200s linear infinite;
 }
 #bg-rays{
-  position:fixed;inset:0;z-index:4;
+  position:fixed;inset:0;z-index:4;pointer-events:none;
   background:
     radial-gradient(ellipse at 50% -5%, rgba(0,212,170,0.08) 0%, transparent 55%),
     conic-gradient(from 270deg at 50% -10%,

@@ -1,7 +1,7 @@
-// Quantum Reality Codes PWA Service Worker v3.0
-// Optimised for offline-first with network-first for HTML
+// Quantum Reality Codes PWA Service Worker v5.0
+// Optimised for offline-first with network-first for HTML, CSS, and JS
 
-const CACHE_NAME = 'reality-codes-v4';
+const CACHE_NAME = 'reality-codes-v5';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -72,9 +72,9 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // CSS/JS: stale-while-revalidate
+  // CSS/JS: network-first (ensures fresh code on every visit)
   if (url.pathname.match(/\.(css|js)$/)) {
-    event.respondWith(staleWhileRevalidate(request));
+    event.respondWith(networkFirst(request));
     return;
   }
 

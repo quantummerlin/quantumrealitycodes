@@ -1929,7 +1929,7 @@ function initKeyboardNav() {
     // Escape closes modals/overlays
     if (e.key === 'Escape') {
       const modal = document.getElementById('intention-modal');
-      if (modal && modal.classList.contains('open')) { closeIntentionModal(); return; }
+      if (modal && modal.classList.contains('active')) { closeIntentionModal(); return; }
       const welcome = document.getElementById('welcome-overlay');
       if (welcome && welcome.style.display === 'flex') { dismissWelcome(); return; }
     }
