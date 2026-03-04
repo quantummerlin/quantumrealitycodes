@@ -1,7 +1,7 @@
-// Quantum Reality Codes PWA Service Worker v7.0
+// Quantum Reality Codes PWA Service Worker v8.0
 // Optimised for offline-first with network-first for HTML, CSS, and JS
 
-const CACHE_NAME = 'reality-codes-v7';
+const CACHE_NAME = 'reality-codes-v8';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -11,6 +11,7 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/images/stars.png',
   '/images/twinkling.png',
+  '/images/QMRCLogo.jpg',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png'
 ];
