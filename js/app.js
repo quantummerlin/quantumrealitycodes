@@ -59,6 +59,9 @@ function navigate(pageName) {
     const pageW = container.offsetWidth;
     container.scrollTo({ left: pageW * idx, behavior: 'smooth' });
   }
+  // Scroll the target page to top
+  const pageEl = document.getElementById('page-' + pageName);
+  if (pageEl) pageEl.scrollTop = 0;
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-page') === pageName);
   });
