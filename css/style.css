@@ -412,6 +412,38 @@ body{
 .code-vibrational-encoding{font-size:0.72rem;color:var(--text-dim);margin-bottom:0.6rem}
 .code-vibrational-encoding span{color:var(--teal-dim);font-weight:700}
 
+/* ── Mersenne Growth Table ── */
+.mersenne-growth{
+  margin:1.2rem 0 0.5rem;padding:1rem 1.2rem;
+  background:rgba(0,212,170,0.04);border:1px solid rgba(0,212,170,0.12);
+  border-radius:var(--radius-md);
+}
+.mersenne-label{
+  font-size:0.72rem;color:var(--text-dim);text-align:center;margin-bottom:0.8rem;
+}
+.mersenne-label strong{color:var(--teal);font-family:'Cinzel',serif;font-size:0.82rem}
+.mersenne-table{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.3rem 1.5rem;
+  max-width:300px;margin:0 auto 0.8rem;
+}
+.mersenne-row{
+  display:contents;
+}
+.mersenne-n{
+  font-size:0.72rem;color:var(--text-dim);text-align:right;padding:0.25rem 0;
+}
+.mersenne-val{
+  font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;
+  color:var(--gold-light);text-align:left;padding:0.25rem 0;
+}
+.mersenne-row.highlight .mersenne-val{
+  color:var(--teal);text-shadow:0 0 8px rgba(0,212,170,0.3);
+}
+.mersenne-note{
+  font-size:0.68rem;color:var(--text-dim);text-align:center;line-height:1.5;
+}
+.mersenne-note strong{color:var(--gold-light)}
+
 /* ── Frequency Visualisation Bar ── */
 .code-frequency-bar{
   width:100%;max-width:320px;height:36px;margin:0 auto 1rem;
