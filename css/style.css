@@ -893,6 +893,59 @@ li{margin-bottom:0.35rem;font-size:0.9rem}
   .code-number{font-size:2rem;letter-spacing:0.2rem}
 }
 
+/* ── Share Card Modal ── */
+.share-card-modal{
+  position:fixed;inset:0;z-index:99998;
+  display:none;
+  background:rgba(4,4,24,0.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding:1.5rem;overflow-y:auto;
+  animation:fadeIn 0.3s ease both;
+}
+.share-card-modal.active{
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:2rem;
+}
+.share-card-inner{
+  text-align:center;max-width:520px;width:100%;
+}
+.share-card-heading{
+  font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:0.12em;
+  color:var(--gold-light,#E8C84A);margin-bottom:0.4rem;
+}
+.share-card-sub{
+  font-size:0.72rem;color:var(--text-dim);margin-bottom:1.2rem;
+}
+.share-card-styles{
+  display:flex;gap:0.5rem;justify-content:center;margin-bottom:1.2rem;flex-wrap:wrap;
+}
+.style-btn{
+  font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.45rem 1.1rem;border-radius:20px;cursor:pointer;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);
+  color:var(--text-dim);transition:var(--transition);
+}
+.style-btn:hover{border-color:var(--teal-dim);color:var(--teal)}
+.style-btn.active{
+  background:rgba(0,212,170,0.15);border-color:var(--teal);color:var(--teal);
+  box-shadow:0 0 12px rgba(0,212,170,0.15);
+}
+#share-card-canvas{
+  width:100%;max-width:400px;height:auto;aspect-ratio:1;
+  border-radius:var(--radius-md);
+  box-shadow:0 8px 32px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,170,0.08);
+  margin-bottom:1.2rem;
+}
+.share-card-actions{
+  display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;
+}
+
+@media(max-width:600px){
+  .share-card-modal{padding:1rem 0.6rem}
+  .share-card-modal.active{padding-top:1.5rem}
+  #share-card-canvas{max-width:320px}
+  .share-card-heading{font-size:0.95rem}
+}
+
 /* ── Fullscreen Intention Modal ── */
 .intention-modal{
   position:fixed;inset:0;z-index:99999;

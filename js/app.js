@@ -132,322 +132,322 @@ const SHARE_WISDOMS = [
 const CATEGORIES = [
   {
     id:'core_alignment', icon:'pray', name:'Core Alignment', color:'#00D4AA',
-    description:'The foundational alignment practice — attune your frequency to Source energy and calibrate your quantum field.',
+    description:'Attune your frequency to Source and calibrate your quantum field.',
     steps:[
-      { key:'gratitude', title:'Gratitude — Open the Channel', icon:'heart',
-        guidance:'Begin by entering a state of deep gratitude. Gratitude is the highest vibrational frequency and opens the channel between you and Source.',
+      { key:'gratitude', title:'Gratitude', icon:'heart',
+        guidance:'Open the channel with gratitude — the highest vibration.',
         quote:{text:'I am the magnetic force of gratitude. Everything I appreciate multiplies in my life.',ref:'Abraham-Hicks'},
-        placeholder:'I am deeply grateful for this moment of alignment. I feel appreciation flowing through every cell of my being. I am thankful for the breath in my lungs, the energy in my field, the infinite potential before me…'},
-      { key:'alignment', title:'Alignment — Attune to Source', icon:'light',
-        guidance:'Bring your thoughts, emotions, and energy into coherence with Source. Feel yourself becoming one with the unified field of infinite intelligence.',
+        placeholder:'I am deeply grateful for this moment. Appreciation flows through every cell of my being…'},
+      { key:'alignment', title:'Alignment', icon:'light',
+        guidance:'Bring your thoughts, emotions, and energy into coherence with Source.',
         quote:{text:'I am one with the field that governs all creation. My awareness shapes my reality.',ref:'Albert Einstein'},
-        placeholder:'I align my mind, body, and spirit with the infinite intelligence of Source. I attune my frequency to the quantum field where all possibilities exist. I am one with the unified field…'},
-      { key:'intention', title:'Intention — Set Your Frequency', icon:'star',
-        guidance:'Clearly state your intention for this session. Intention collapses the wave function and begins the process of manifestation.',
+        placeholder:'I align my mind, body, and spirit with Source. I am one with the unified field…'},
+      { key:'intention', title:'Set Your Intention', icon:'star',
+        guidance:'State your intention clearly — intention collapses the wave function.',
         quote:{text:'I persist in my assumption until it hardens into fact. What I declare, I become.',ref:'Neville Goddard'},
-        placeholder:'My intention today is to embody fearless confidence and magnetic presence in every interaction today. I set this frequency clearly and deliberately. I feel this reality as already present in my field…'},
-      { key:'release', title:'Release — Let Go of Resistance', icon:'flame',
-        guidance:'Release any resistance, doubt, or limiting beliefs that block your alignment. Resistance is the only barrier between you and your desired reality.',
-        quote:{text:'I release every frequency that does not match my desire. Nothing stands between me and my highest good.',ref:'Abraham-Hicks'},
-        placeholder:'I release all resistance, all doubt, all fear. I let go of the need to control the how or the when. I surrender my attachment to outcomes and trust the process of creation…'},
-      { key:'surrender', title:'Surrender — Trust the Process', icon:'dove',
-        guidance:'Surrender completely to the intelligence of Source. Trust that the Universe is rearranging itself to match your new frequency.',
+        placeholder:'My intention is to embody fearless confidence and magnetic presence today…'},
+      { key:'release', title:'Release Resistance', icon:'flame',
+        guidance:'Let go of doubt and limiting beliefs that block your alignment.',
+        quote:{text:'I release every frequency that does not match my desire.',ref:'Abraham-Hicks'},
+        placeholder:'I release all resistance, doubt, and fear. I trust the process of creation…'},
+      { key:'surrender', title:'Surrender', icon:'dove',
+        guidance:'Trust the Universe to rearrange itself to match your new frequency.',
         quote:{text:'I yield to the flow of life. I stop opposing and start allowing.',ref:'Eckhart Tolle'},
-        placeholder:'I surrender my will to the greater intelligence of the Universe. I trust that everything is unfolding in perfect divine timing. I allow Source to move through me and orchestrate the details…'},
-      { key:'closing', title:'Closing — Seal the Frequency', icon:'cross',
-        guidance:'Seal your alignment session by affirming the reality of what you have declared. Feel the certainty in every fiber of your being.',
+        placeholder:'I surrender to the greater intelligence of the Universe. Everything unfolds in perfect timing…'},
+      { key:'closing', title:'Seal the Frequency', icon:'cross',
+        guidance:'Affirm the reality of what you have declared with total certainty.',
         quote:{text:'I live in the feeling of my wish fulfilled. It is already done.',ref:'Neville Goddard'},
-        placeholder:'I seal this frequency into my quantum field. What I have declared is already done in the realm of infinite possibility. I carry this vibration with me into every moment. And so it is.'}
+        placeholder:'I seal this frequency into my field. What I have declared is already done. And so it is.'}
     ]
   },
   {
     id:'energy_shield', icon:'shield', name:'Energy Shield', color:'#64B5F6',
-    description:'Activate an energetic shield of protection around your field — deflect low-frequency interference and maintain your vibration.',
+    description:'Activate a protective shield — deflect low-frequency interference.',
     steps:[
       { key:'center', title:'Center Your Energy', icon:'pray',
-        guidance:'Begin by centering your awareness in your core. Ground your energy into the Earth and draw Source light down through your crown.',
+        guidance:'Ground your awareness into the Earth and draw Source light through your crown.',
         quote:{text:'If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.',ref:'Nikola Tesla'},
-        placeholder:'I center my awareness in the core of my being. I ground my energy deep into the Earth and draw pure Source light down through my crown. I am anchored and present…'},
+        placeholder:'I center my awareness in my core. I am grounded, anchored, and present…'},
       { key:'activate', title:'Activate the Shield', icon:'shield',
-        guidance:'Visualize a sphere of brilliant, impenetrable light surrounding your entire energy field. This shield operates at a frequency that only allows love and truth to pass through.',
+        guidance:'Visualise a sphere of impenetrable light surrounding your energy field.',
         quote:{text:'Everything I seek is already within me. I am the source of my own protection.',ref:'Rumi'},
-        placeholder:'I now activate my energy shield. I visualize a sphere of brilliant light surrounding my entire being. This shield vibrates at the frequency of unconditional love and only allows energies aligned with my highest good to enter…'},
-      { key:'declare', title:'Declare Your Sovereignty', icon:'bolt',
-        guidance:'Declare your energetic sovereignty with authority. You are the sole operator of your field. No external energy may override your frequency without your consent.',
+        placeholder:'I activate my energy shield — a sphere of brilliant light surrounding my being…'},
+      { key:'declare', title:'Declare Sovereignty', icon:'bolt',
+        guidance:'You are the sole operator of your field — declare it with authority.',
         quote:{text:'No one can create in my experience. I alone direct my thoughts and my field.',ref:'Abraham-Hicks'},
-        placeholder:'I declare my energetic sovereignty. I am the sole authority over my quantum field. No low-frequency energy, no negative projection, no external interference may penetrate this shield. I am sovereign…'},
+        placeholder:'I am the sole authority over my quantum field. I am sovereign…'},
       { key:'extend', title:'Extend Protection', icon:'hand',
-        guidance:'Extend your protective shield to encompass those you love — your family, your home, your sacred spaces.',
+        guidance:'Extend your shield to cover your loved ones and sacred spaces.',
         quote:{text:'Where my attention goes, my energy flows. I direct it now with purpose.',ref:'Joe Dispenza'},
-        placeholder:'I extend this shield of protection to those I hold dear. I surround my family, my home, and my sacred spaces with this same impenetrable light. They are safe, they are held, they are shielded…'},
+        placeholder:'I extend this shield to my family, my home, and those I hold dear…'},
       { key:'closing', title:'Seal the Shield', icon:'cross',
-        guidance:'Seal your energy shield with a final declaration. Know that it operates continuously, maintaining your vibration even while you sleep.',
+        guidance:'Seal it — your shield operates continuously, even while you sleep.',
         quote:{text:'My energy cannot be diminished. It can only be transformed into greater power.',ref:'Albert Einstein'},
-        placeholder:'I seal this energy shield into my field permanently. It operates at all times, in all places, through all dimensions. I am protected, I am sovereign, I am safe. And so it is.'}
+        placeholder:'I seal this shield permanently. I am protected, sovereign, and safe. And so it is.'}
     ]
   },
   {
     id:'quantum_healing', icon:'heart', name:'Quantum Healing', color:'#66BB6A',
-    description:'Direct healing frequency into your body, mind, and spirit — activate cellular regeneration and restore energetic wholeness.',
+    description:'Direct healing frequency into body, mind, and spirit.',
     steps:[
-      { key:'awareness', title:'Body Awareness — Scan Your Field', icon:'light',
-        guidance:'Begin by scanning your entire body with your awareness. Notice where energy is blocked, stagnant, or out of alignment. Your body is an intelligent system that communicates through sensation.',
+      { key:'awareness', title:'Body Scan', icon:'light',
+        guidance:'Scan your body — notice where energy is blocked or stagnant.',
         quote:{text:'My body obeys the operations of my mind. I choose healing thoughts deliberately.',ref:'James Allen'},
-        placeholder:'I bring my full awareness to my body now. I scan from the crown of my head to the soles of my feet. I notice where energy flows freely and where it feels blocked or heavy…'},
-      { key:'release', title:'Release — Clear Stored Trauma', icon:'flame',
-        guidance:'Release any stored trauma, pain, or emotional residue from your cells. Your body stores the memories of every experience. Give it permission to let go of what no longer serves.',
-        quote:{text:'I close the gap between where I am and where I want to be. My body responds to my new signal.',ref:'Abraham-Hicks'},
-        placeholder:'I give my body permission to release all stored trauma, pain, and energetic residue. Every cell is free to let go of what no longer serves my healing. I release it now — from my tissues, my organs, my DNA…'},
-      { key:'activate', title:'Activate Healing Frequency', icon:'heart',
-        guidance:'Direct pure healing frequency into every area that needs restoration. Visualize Source energy as liquid light flowing into every cell, rewriting the code of your biology.',
-        quote:{text:'I change my perception and rewrite the chemistry of my body in this moment.',ref:'Bruce Lipton'},
-        placeholder:'I activate the healing frequency of Source within me now. Liquid light flows into every cell, every organ, every system. My DNA is being restored to its original blueprint of perfect health…'},
+        placeholder:'I scan from crown to soles. I notice where energy flows and where it feels heavy…'},
+      { key:'release', title:'Release Stored Trauma', icon:'flame',
+        guidance:'Give your body permission to release stored pain and emotional residue.',
+        quote:{text:'I close the gap between where I am and where I want to be.',ref:'Abraham-Hicks'},
+        placeholder:'I give my body permission to release all stored trauma and pain. I let go now…'},
+      { key:'activate', title:'Activate Healing', icon:'heart',
+        guidance:'Direct Source energy as liquid light into every cell.',
+        quote:{text:'I change my perception and rewrite the chemistry of my body.',ref:'Bruce Lipton'},
+        placeholder:'Healing frequency flows into every cell. My DNA is restored to perfect health…'},
       { key:'declare', title:'Declare Wholeness', icon:'star',
-        guidance:'Declare your wholeness and perfect health as a present-tense reality. In the quantum field, your healed self already exists. Collapse the wave function into that timeline.',
-        quote:{text:'I am changing my thoughts and my body changes with them. Health is my chosen state.',ref:'Joe Dispenza'},
-        placeholder:'I am whole. I am healed. I am vibrating at the frequency of perfect health. Every cell in my body knows its purpose and fulfills it with precision. Healing is my natural state…'},
-      { key:'closing', title:'Seal the Healing Code', icon:'cross',
-        guidance:'Seal this healing frequency into your field. Trust that your body\'s innate intelligence will continue the work of restoration around the clock.',
-        quote:{text:'The natural healing force within me is the greatest force in getting well. I trust it completely.',ref:'Hippocrates'},
-        placeholder:'I seal this healing frequency into my quantum field. My body continues to heal, regenerate, and restore itself in every moment. I trust the intelligence within me. And so it is.'}
+        guidance:'Declare perfect health as a present-tense reality.',
+        quote:{text:'I am changing my thoughts and my body changes with them.',ref:'Joe Dispenza'},
+        placeholder:'I am whole. I am healed. Healing is my natural state…'},
+      { key:'closing', title:'Seal the Healing', icon:'cross',
+        guidance:'Trust your body\'s innate intelligence to continue restoring you.',
+        quote:{text:'The natural healing force within me is the greatest force in getting well.',ref:'Hippocrates'},
+        placeholder:'I seal this healing frequency into my field. My body heals in every moment. And so it is.'}
     ]
   },
   {
     id:'clarity_intuition', icon:'light', name:'Clarity & Intuition', color:'#CE93D8',
-    description:'Activate your inner knowing — sharpen intuition, dissolve confusion, and access the infinite intelligence within.',
+    description:'Sharpen intuition and access the infinite intelligence within.',
     steps:[
       { key:'still', title:'Still the Mind', icon:'dove',
-        guidance:'Begin by quieting the noise of the conscious mind. In stillness, the voice of intuition becomes clear. Let your thoughts settle like sediment in still water.',
+        guidance:'Quiet the conscious mind — in stillness, intuition speaks clearly.',
         quote:{text:'My mind is still, and the whole universe surrenders its wisdom to me.',ref:'Lao Tzu'},
-        placeholder:'I quiet my conscious mind now. I release the noise, the chatter, the overthinking. Like still water, my mind becomes clear and transparent. In this stillness, I can hear my inner truth…'},
+        placeholder:'I quiet my mind now. Like still water, clarity emerges…'},
       { key:'open', title:'Open the Channel', icon:'light',
-        guidance:'Open the channel between your conscious awareness and infinite intelligence. Your higher self has access to information beyond the limits of your five senses.',
+        guidance:'Open the channel between your awareness and infinite intelligence.',
         quote:{text:'My intuitive mind is a sacred gift. I honour it above all else.',ref:'Albert Einstein'},
-        placeholder:'I open the channel between my conscious mind and infinite intelligence. I allow insights, visions, and knowing to flow through me without judgment. My intuition is a direct line to Source…'},
+        placeholder:'I open the channel to Source. Insights flow through me without judgment…'},
       { key:'ask', title:'Ask for Clarity', icon:'star',
-        guidance:'Present your question or situation to the Universe with specificity. The clearer your question, the clearer the answer. Ask and then listen — do not force the response.',
-        quote:{text:'The universe conspires to bring me the clarity I seek. I ask and I receive.',ref:'Paulo Coelho'},
-        placeholder:'I ask the Universe for clarity regarding the next step on my path — the decision that aligns with my highest timeline. I present this openly and trust that the answer is already making its way to me. I am ready to receive…'},
-      { key:'trust', title:'Trust Your Inner Knowing', icon:'shield',
-        guidance:'Trust the impressions, feelings, and subtle nudges that arise. Intuition rarely shouts — it whispers. Honor the first impulse before the rational mind edits it.',
+        guidance:'Present your question to the Universe with specificity, then listen.',
+        quote:{text:'The universe conspires to bring me the clarity I seek.',ref:'Paulo Coelho'},
+        placeholder:'I ask the Universe for clarity on the next step on my path. I am ready to receive…'},
+      { key:'trust', title:'Trust Your Knowing', icon:'shield',
+        guidance:'Honour the whispers and nudges — intuition rarely shouts.',
         quote:{text:'I follow my heart and intuition. They already know what I am meant to become.',ref:'Steve Jobs'},
-        placeholder:'I trust my inner knowing completely. I honour the whispers, the nudges, the subtle feelings that arise. My intuition is accurate and reliable. I follow its guidance with confidence…'},
+        placeholder:'I trust my inner knowing completely. I follow its guidance with confidence…'},
       { key:'closing', title:'Seal the Clarity', icon:'cross',
-        guidance:'Seal this clarity into your awareness. Carry this heightened intuition into every decision, every conversation, every choice.',
-        quote:{text:'My intuition is the most valuable thing I possess. I trust it absolutely.',ref:'Albert Einstein'},
-        placeholder:'I seal this clarity into my field. My intuition remains sharp and active in every moment. I trust the intelligence within me to guide my path. And so it is.'}
+        guidance:'Carry this heightened intuition into every decision you make.',
+        quote:{text:'My intuition is the most valuable thing I possess.',ref:'Albert Einstein'},
+        placeholder:'I seal this clarity into my field. I trust the intelligence within me. And so it is.'}
     ]
   },
   {
     id:'gratitude_amplification', icon:'star', name:'Gratitude Amplification', color:'#FFB74D',
-    description:'Magnify your gratitude frequency to attract more abundance, joy, and synchronicity into your reality.',
+    description:'Magnify your gratitude frequency to attract abundance and synchronicity.',
     steps:[
-      { key:'enter', title:'Enter the Frequency of Appreciation', icon:'heart',
-        guidance:'Begin by feeling — not just thinking — deep appreciation. Move from your head to your heart. Let gratitude become a full-body vibration.',
+      { key:'enter', title:'Feel the Appreciation', icon:'heart',
+        guidance:'Move from thinking gratitude to feeling it — a full-body vibration.',
         quote:{text:'I am grateful, and in my gratitude, fear disappears and abundance appears.',ref:'Tony Robbins'},
-        placeholder:'I enter the frequency of deep appreciation now. I feel gratitude not just as a thought but as a vibration in every cell. My heart is open and radiating thankfulness…'},
+        placeholder:'I feel gratitude as a vibration in every cell. My heart radiates thankfulness…'},
       { key:'specific', title:'Name Your Blessings', icon:'light',
-        guidance:'Be specific. Name the people, experiences, and synchronicities you are grateful for. Specificity amplifies the frequency.',
+        guidance:'Be specific — specificity amplifies the frequency.',
         quote:{text:'I acknowledge the good I already have. This is the foundation for all my abundance.',ref:'Eckhart Tolle'},
-        placeholder:'I am grateful for the people who love me unconditionally, the roof over my head, the strength in my body, the clarity in my mind. I give thanks for the people who enrich my life, the opportunities that flow to me, the synchronicities that guide my path…'},
-      { key:'future', title:'Gratitude for What Is Coming', icon:'star',
-        guidance:'Give thanks for what is on its way to you — as if it has already arrived. This is the quantum leap: thanking the Universe in advance collapses future possibilities into present reality.',
+        placeholder:'I am grateful for the people who love me, the strength in my body, the clarity in my mind…'},
+      { key:'future', title:'Thank in Advance', icon:'star',
+        guidance:'Give thanks for what is on its way — as if it has already arrived.',
         quote:{text:'I am a thankful receiver, and I bear a plentiful harvest.',ref:'William Blake'},
-        placeholder:'I give thanks for what is already on its way to me. I am grateful for the abundance flowing into my life right now. I feel the joy of receiving before it arrives. It is already done…'},
+        placeholder:'I give thanks for what is already on its way. I feel the joy of receiving before it arrives…'},
       { key:'amplify', title:'Amplify the Signal', icon:'bolt',
-        guidance:'Intensify the feeling. Let gratitude overflow from your heart into your entire energy field. The stronger the signal, the faster the manifestation.',
-        quote:{text:'What I think about and thank about, I bring about. My gratitude creates my reality.',ref:'John Demartini'},
-        placeholder:'I amplify this gratitude signal to its highest intensity. Every cell vibrates with appreciation. My entire field is broadcasting thankfulness. The Universe receives this signal and responds in kind…'},
-      { key:'closing', title:'Seal the Gratitude Frequency', icon:'cross',
-        guidance:'Seal this amplified gratitude into your field. Carry this vibration throughout your day — it is the master frequency.',
-        quote:{text:'My gratitude is the parent of all other virtues. From it, everything good flows.',ref:'Marcus Tullius Cicero'},
-        placeholder:'I seal this amplified gratitude frequency into my quantum field. I carry this vibration of appreciation into every moment of my day. I am a magnet for blessings. And so it is.'}
+        guidance:'Intensify the feeling — the stronger the signal, the faster the manifestation.',
+        quote:{text:'What I think about and thank about, I bring about.',ref:'John Demartini'},
+        placeholder:'I amplify this gratitude to its highest intensity. My field broadcasts thankfulness…'},
+      { key:'closing', title:'Seal the Gratitude', icon:'cross',
+        guidance:'Carry this vibration throughout your day — it is the master frequency.',
+        quote:{text:'My gratitude is the parent of all other virtues.',ref:'Marcus Tullius Cicero'},
+        placeholder:'I seal this gratitude into my field. I am a magnet for blessings. And so it is.'}
     ]
   },
   {
     id:'abundance_activation', icon:'crown', name:'Abundance Activation', color:'#FFD54F',
-    description:'Activate the frequency of unlimited abundance — reprogram your subconscious for wealth, prosperity, and overflow.',
+    description:'Activate unlimited abundance — reprogram for wealth and overflow.',
     steps:[
       { key:'acknowledge', title:'Acknowledge Infinite Supply', icon:'light',
-        guidance:'Begin by acknowledging that the Universe is infinitely abundant. Scarcity is an illusion of the conditioned mind. There is more than enough for everyone.',
+        guidance:'The Universe is infinitely abundant — scarcity is a conditioned illusion.',
         quote:{text:'There is a supply for every demand I hold. I open myself to receive it now.',ref:'Florence Scovel Shinn'},
-        placeholder:'I acknowledge that the Universe is infinitely abundant. There is no lack in Source energy. Scarcity is a programmed illusion that I now dissolve. There is more than enough for everyone, including me…'},
+        placeholder:'I acknowledge the infinite abundance of the Universe. There is more than enough for me…'},
       { key:'clear', title:'Clear Scarcity Programming', icon:'flame',
-        guidance:'Identify and release any subconscious beliefs around lack, unworthiness, or limitation. These programs are not yours — they were inherited. Release them now.',
+        guidance:'Release inherited beliefs around lack and unworthiness.',
         quote:{text:'I think I can, and I am right. My belief in abundance makes it so.',ref:'Henry Ford'},
-        placeholder:'I identify and release all subconscious programming around scarcity, lack, and unworthiness. These beliefs were inherited, not chosen. I delete them from my field now. I am worthy of unlimited abundance…'},
-      { key:'activate', title:'Activate the Abundance Code', icon:'crown',
-        guidance:'Activate the frequency of abundance within your quantum field. Feel the energy of wealth, overflow, and prosperity as if it is already your reality.',
+        placeholder:'I release all programming around scarcity and lack. I am worthy of unlimited abundance…'},
+      { key:'activate', title:'Activate Abundance', icon:'crown',
+        guidance:'Feel the energy of wealth and prosperity as your present reality.',
         quote:{text:'Whatever the mind can conceive and believe, it can achieve.',ref:'Napoleon Hill'},
-        placeholder:'I activate the abundance code within my DNA. I feel the frequency of wealth and prosperity flowing through my veins. Money flows to me easily and effortlessly from expected and unexpected sources…'},
-      { key:'declare', title:'Declare Your Prosperity', icon:'star',
-        guidance:'Make bold declarations of your abundant reality. Speak them with certainty, as though reading from the record of what already is.',
-        quote:{text:'I assume the feeling of abundance fulfilled. I observe it flowing toward me.',ref:'Neville Goddard'},
-        placeholder:'I am prosperous. I am wealthy. I am a conduit for unlimited financial abundance. Opportunities flow to me with ease. I am always in the right place at the right time for my highest financial good…'},
-      { key:'closing', title:'Seal the Abundance Frequency', icon:'cross',
-        guidance:'Seal this abundance frequency into your subconscious. From this moment, you operate from overflow, not lack.',
-        quote:{text:'I come to the fountain of life with a tank, not a sieve. I receive in full.',ref:'Ben Sweetland'},
-        placeholder:'I seal this abundance frequency permanently into my quantum field and subconscious mind. I am now programmed for prosperity. Wealth is my natural state. And so it is.'}
+        placeholder:'I activate the abundance code. Money flows to me easily from all sources…'},
+      { key:'declare', title:'Declare Prosperity', icon:'star',
+        guidance:'Speak your abundant reality with certainty — these are facts, not wishes.',
+        quote:{text:'I assume the feeling of abundance fulfilled.',ref:'Neville Goddard'},
+        placeholder:'I am prosperous. Opportunities flow to me with ease. I am always in the right place…'},
+      { key:'closing', title:'Seal the Abundance', icon:'cross',
+        guidance:'From this moment, you operate from overflow, not lack.',
+        quote:{text:'I come to the fountain of life with a tank, not a sieve.',ref:'Ben Sweetland'},
+        placeholder:'I seal abundance into my field permanently. Wealth is my natural state. And so it is.'}
     ]
   },
   {
     id:'energy_warfare', icon:'bolt', name:'Energy Warfare', color:'#EF5350',
-    description:'Clear negative energy, dissolve toxic attachments, and reclaim your sovereign frequency from all interference.',
+    description:'Clear negative energy and reclaim your sovereign frequency.',
     steps:[
-      { key:'authority', title:'Declare Your Authority', icon:'bolt',
-        guidance:'Declare your sovereign authority over your own energy field. You are the sole operator of your reality. Claim your power with absolute certainty.',
-        quote:{text:'I am the master of my fate. I am the captain of my soul. Nothing overrides my will.',ref:'William Ernest Henley'},
-        placeholder:'I declare my absolute authority over my energy field. I am the sole operator of my frequency. I am the master of my reality. No force, no entity, no energy may override my sovereign will…'},
-      { key:'identify', title:'Identify the Interference', icon:'search',
-        guidance:'Name the source of energetic interference. Whether it is a toxic relationship, a negative environment, a limiting pattern, or an energetic cord — identify it clearly.',
-        quote:{text:'I make the unconscious conscious. What was hidden is now seen and no longer controls me.',ref:'Carl Jung'},
-        placeholder:'I identify the source of energetic interference in my field. I see clearly the patterns, cords, and attachments that drain my energy. I name them: the doubt, the criticism, the draining patterns that have operated in my field without my permission. They no longer have power over me…'},
+      { key:'authority', title:'Declare Authority', icon:'bolt',
+        guidance:'Claim sovereign authority over your energy field with absolute certainty.',
+        quote:{text:'I am the master of my fate. I am the captain of my soul.',ref:'William Ernest Henley'},
+        placeholder:'I declare my authority over my energy field. I am the master of my reality…'},
+      { key:'identify', title:'Identify Interference', icon:'search',
+        guidance:'Name the source of interference — toxic cords, patterns, or environments.',
+        quote:{text:'I make the unconscious conscious. What was hidden no longer controls me.',ref:'Carl Jung'},
+        placeholder:'I identify what drains my energy. I see the patterns clearly. They no longer have power…'},
       { key:'sever', title:'Sever Toxic Cords', icon:'flame',
-        guidance:'Sever all energetic cords that bind you to people, places, and situations that lower your frequency. This is not about anger — it is about sovereignty.',
-        quote:{text:'I let go and I am free. My freedom is the only condition for my happiness.',ref:'Thich Nhat Hanh'},
-        placeholder:'I sever all toxic energetic cords now. Every cord that drains me, manipulates me, or lowers my vibration is cut and cauterized with Source light. I am free from these attachments…'},
-      { key:'transmute', title:'Transmute Negative Energy', icon:'star',
-        guidance:'Transmute all negative energy into pure Source light. Do not fight darkness — transform it. What was poison becomes medicine.',
-        quote:{text:'Everything is energy. I match the frequency of the reality I want, and the old dissolves.',ref:'Bashar (Darryl Anka)'},
-        placeholder:'I transmute all negative energy in my field into pure Source light. Darkness becomes illumination. Fear becomes power. What was used against me now fuels my evolution. I transform everything into light…'},
+        guidance:'Cut all energetic cords to people, places, or situations that lower your frequency.',
+        quote:{text:'I let go and I am free.',ref:'Thich Nhat Hanh'},
+        placeholder:'I sever all toxic cords now. Every draining attachment is cut with Source light…'},
+      { key:'transmute', title:'Transmute Negativity', icon:'star',
+        guidance:'Don\'t fight darkness — transform it. What was poison becomes medicine.',
+        quote:{text:'Everything is energy. I match the frequency of the reality I want.',ref:'Bashar (Darryl Anka)'},
+        placeholder:'I transmute all negative energy into Source light. Fear becomes power…'},
       { key:'fortify', title:'Fortify Your Field', icon:'shield',
-        guidance:'Fortify your energy field so that it cannot be penetrated by the same frequencies again. Raise your baseline vibration above the reach of interference.',
+        guidance:'Raise your baseline vibration above the reach of interference.',
         quote:{text:'I rise to a new level of consciousness. No old problem can reach me here.',ref:'Albert Einstein'},
-        placeholder:'I fortify my energy field with the highest frequency of Source light. My vibration is elevated beyond the reach of any interference. I am impenetrable, I am sovereign, I am fortified…'},
+        placeholder:'I fortify my field with the highest frequency. I am impenetrable and sovereign…'},
       { key:'closing', title:'Victory Declaration', icon:'cross',
-        guidance:'Declare your victory over all interference. The battle is won before it is fought — your frequency has already shifted.',
-        quote:{text:'My wound is the place where the Light enters me. What was broken is now my greatest strength.',ref:'Rumi'},
-        placeholder:'The interference is cleared. My field is sovereign. My frequency is reclaimed. I stand in my full power, free from all that sought to diminish me. Victory is mine. And so it is.'}
+        guidance:'The battle is won — your frequency has already shifted.',
+        quote:{text:'My wound is the place where the Light enters me.',ref:'Rumi'},
+        placeholder:'The interference is cleared. My field is sovereign. Victory is mine. And so it is.'}
     ]
   },
   {
     id:'collective_intention', icon:'hand', name:'Collective Intention', color:'#AB47BC',
-    description:'Set powerful intentions for others — amplify healing, abundance, and alignment for those in your energetic circle.',
+    description:'Set intentions for others — amplify healing and alignment for your circle.',
     steps:[
-      { key:'connect', title:'Connect to the Collective Field', icon:'heart',
-        guidance:'Begin by connecting to the collective field of consciousness. Recognize that we are all nodes in the same quantum field. What you send out ripples through the entire web.',
-        quote:{text:'I am part of the whole, part of the Universe. My intention ripples through all existence.',ref:'Albert Einstein'},
-        placeholder:'I connect my awareness to the collective field of consciousness. I recognize that we are all connected — all part of one infinite field. What I send out touches everyone, and what I intend for others amplifies my own field…'},
-      { key:'name', title:'Name Those You Hold in Intention', icon:'hand',
-        guidance:'Name the individuals, communities, or aspects of the world you wish to send energy to. Be specific — specificity focuses the beam.',
+      { key:'connect', title:'Connect to the Collective', icon:'heart',
+        guidance:'We are all nodes in the same quantum field — what you send out ripples through all.',
+        quote:{text:'I am part of the whole. My intention ripples through all existence.',ref:'Albert Einstein'},
+        placeholder:'I connect to the collective field. What I intend for others amplifies my own field…'},
+      { key:'name', title:'Name Who You Hold', icon:'hand',
+        guidance:'Name the people or communities you wish to send energy to — be specific.',
         quote:{text:'I lose myself in service to others, and in doing so I find my truest self.',ref:'Mahatma Gandhi'},
-        placeholder:'I hold in my field the following beings: my family, my closest friends, those who are struggling, and those who have asked for my support. I see them clearly. I feel their energy. I send the highest frequency of love and intention toward their healing and expansion…'},
+        placeholder:'I hold my family, my friends, and those who need support in my field now…'},
       { key:'send', title:'Send the Frequency', icon:'bolt',
-        guidance:'Direct healing, abundance, or alignment energy to those you have named. Visualize the energy leaving your field and arriving in theirs — instantly, as quantum entanglement has no distance.',
-        quote:{text:'I am connected to every being. My energy reaches them instantly across any distance.',ref:'Neil deGrasse Tyson'},
-        placeholder:'I send the frequency of healing, love, abundance, and infinite clarity to each person I have named. Distance is an illusion — my intention reaches them instantly. I see them whole, I see them thriving, I see them aligned…'},
+        guidance:'Direct energy to those you\'ve named — quantum entanglement has no distance.',
+        quote:{text:'I am connected to every being. My energy reaches them instantly.',ref:'Neil deGrasse Tyson'},
+        placeholder:'I send healing, love, and clarity to each person I have named. They receive it now…'},
       { key:'protect', title:'Shield Them in Light', icon:'shield',
-        guidance:'Surround those you love with a protective field of Source light. Intend that they be shielded from low-frequency interference and guided toward their highest timeline.',
-        quote:{text:'Where there is love there is life. I send love now and it creates life.',ref:'Mahatma Gandhi'},
-        placeholder:'I surround them in an impenetrable shield of Source light. They are protected from all low-frequency interference. They are guided toward their highest timeline. They are safe, they are loved, they are held…'},
-      { key:'closing', title:'Seal the Collective Intention', icon:'cross',
-        guidance:'Seal your intention for others into the quantum field. Release attachment to how it manifests. Trust the intelligence of Source to deliver it in the perfect way and time.',
+        guidance:'Surround your loved ones with protective Source light.',
+        quote:{text:'Where there is love there is life.',ref:'Mahatma Gandhi'},
+        placeholder:'I surround them in Source light. They are protected, guided, and loved…'},
+      { key:'closing', title:'Seal the Intention', icon:'cross',
+        guidance:'Release attachment to how it manifests — trust Source to deliver.',
         quote:{text:'I visualize and I materialize. What I see in my mind, I create in reality.',ref:'Denis Waitley'},
-        placeholder:'I seal this collective intention into the field. I release attachment to the how and the when. Source intelligence delivers this energy in the perfect way and time. And so it is.'}
+        placeholder:'I seal this collective intention. Source delivers in the perfect way and time. And so it is.'}
     ]
   },
   {
     id:'forgiveness_release', icon:'flame', name:'Forgiveness Release', color:'#4FC3F7',
-    description:'Release resentment and energetic debt — free yourself from the vibrational prison of unforgiveness.',
+    description:'Release resentment and free yourself from vibrational prison.',
     steps:[
       { key:'acknowledge', title:'Acknowledge the Weight', icon:'heart',
-        guidance:'Begin by honestly acknowledging what you are carrying. Resentment is a frequency anchor — it locks you into a lower vibrational state. Name the hurt without suppression.',
+        guidance:'Honestly name what you are carrying — resentment locks you in a lower frequency.',
         quote:{text:'I refuse to drink the poison of resentment any longer. I choose my own peace.',ref:'Buddhist Proverb'},
-        placeholder:'I honestly acknowledge the resentment I carry. I have been hurt by those who wronged me and the situations that left their mark on my heart. I do not suppress this truth — I bring it fully into the light of my awareness…'},
-      { key:'understand', title:'Understand the Energetics', icon:'light',
-        guidance:'Understand that forgiveness is not about condoning harm — it is about freeing your own energy. Resentment keeps you entangled with the very frequency you want to escape.',
+        placeholder:'I acknowledge the resentment I carry. I bring this truth into the light of my awareness…'},
+      { key:'understand', title:'Understand Forgiveness', icon:'light',
+        guidance:'Forgiveness is not condoning harm — it is freeing your own energy.',
         quote:{text:'Forgiveness is not about them. It is the key that unlocks my own freedom.',ref:'Hannah Arendt'},
-        placeholder:'I understand that forgiveness is not about them — it is about my freedom. Every moment I hold resentment, I volunteer for energetic imprisonment. I choose to free myself now…'},
+        placeholder:'Forgiveness is about my freedom, not their innocence. I choose to free myself now…'},
       { key:'release', title:'Release the Cord', icon:'flame',
-        guidance:'Cut the energetic cord of resentment. Let it dissolve in Source light. Feel the weight lift as you reclaim the energy you have been investing in pain.',
-        quote:{text:'When I let go of what I am, I become what I might be. I release and I rise.',ref:'Lao Tzu'},
-        placeholder:'I release the cord of resentment now. I cut every energetic tie to this pain. I feel the weight dissolving. The energy I was investing in anger is now reclaimed and redirected toward my highest good…'},
-      { key:'bless', title:'Send Light to the Source', icon:'star',
-        guidance:'Send neutral or compassionate energy toward the person or situation. This is not weakness — it is the ultimate act of sovereignty. You are free because you choose to be.',
-        quote:{text:'I am the violet that sheds fragrance on the heel that crushed it. My forgiveness is my power.',ref:'Mark Twain'},
-        placeholder:'I send light to those who hurt me. Not because they deserve it, but because I deserve peace. I release them from my energetic field. I wish them their own healing and evolution…'},
-      { key:'closing', title:'Declare Your Freedom', icon:'cross',
-        guidance:'Declare your energetic freedom. The cord is cut. The debt is dissolved. You are no longer vibrationally entangled with the past.',
-        quote:{text:'I let go. I forgive myself. I forgive the situation. It is over. I move forward now.',ref:'Steve Maraboli'},
-        placeholder:'I am free. The cord is cut. The energetic debt is dissolved. I am no longer entangled with the past. My field is clear, my vibration is rising, and I move forward in sovereignty. And so it is.'}
+        guidance:'Cut the energetic cord and reclaim the energy you\'ve invested in pain.',
+        quote:{text:'When I let go of what I am, I become what I might be.',ref:'Lao Tzu'},
+        placeholder:'I cut the cord of resentment now. The weight is dissolving. My energy is reclaimed…'},
+      { key:'bless', title:'Send Light', icon:'star',
+        guidance:'Send compassion to the source — not weakness, but the ultimate act of sovereignty.',
+        quote:{text:'I am the violet that sheds fragrance on the heel that crushed it.',ref:'Mark Twain'},
+        placeholder:'I send light to those who hurt me. Not for them — because I deserve peace…'},
+      { key:'closing', title:'Declare Freedom', icon:'cross',
+        guidance:'The cord is cut. The debt is dissolved. You are free.',
+        quote:{text:'I let go. I forgive. It is over. I move forward now.',ref:'Steve Maraboli'},
+        placeholder:'I am free. The cord is cut. I move forward in sovereignty. And so it is.'}
     ]
   },
   {
     id:'reality_declaration', icon:'cross', name:'Reality Declaration', color:'#FF7043',
-    description:'Declare your desired reality with absolute authority — speak your future into existence through the power of conscious language.',
+    description:'Speak your desired reality into existence with conscious language.',
     steps:[
-      { key:'presence', title:'Enter the Present Moment', icon:'light',
-        guidance:'Ground yourself fully in the present moment. All creation happens in the now. Release the past, release the future — become fully present in this moment of pure potential.',
+      { key:'presence', title:'Enter the Present', icon:'light',
+        guidance:'Ground yourself in the now — all creation happens in this moment.',
         quote:{text:'I focus all my energy on building the new. The old falls away on its own.',ref:'Socrates (via Dan Millman)'},
-        placeholder:'I ground myself fully in the present moment. The past is released. The future is a canvas. This moment — right here, right now — is the point of all creation. I am fully present and ready to declare…'},
+        placeholder:'I am fully present. This moment is the point of all creation…'},
       { key:'vision', title:'Clarify Your Vision', icon:'star',
-        guidance:'See your desired reality in vivid detail. Engage all your senses. In the quantum field, observation collapses possibility into reality. See it, feel it, know it.',
-        quote:{text:'My imagination is the preview of my coming attractions. I see my reality now.',ref:'Albert Einstein'},
-        placeholder:'I see my desired reality in vivid detail now. I see myself thriving — radiant health, deep connection, meaningful purpose, and abundant prosperity flowing in every direction. I feel it in my body. I hear it. I taste the sweetness of this life. It is real. It is happening. It is mine…'},
+        guidance:'See your desired reality in vivid detail — engage all your senses.',
+        quote:{text:'My imagination is the preview of my coming attractions.',ref:'Albert Einstein'},
+        placeholder:'I see my desired reality clearly — thriving, abundant, purposeful, connected…'},
       { key:'declare', title:'Declare with Authority', icon:'bolt',
-        guidance:'Speak your reality into existence with the full authority of your being. These are not wishes — they are declarations of what is. Your words carry creative force.',
-        quote:{text:'My word is my wand. Every word I speak creates my reality. I choose my words with power.',ref:'Florence Scovel Shinn'},
-        placeholder:'I declare with absolute authority: I am whole, I am powerful, I am creating the life I was born to live. This is not a wish — it is a fact in the quantum field. My words carry the creative force of Source itself. What I declare, I create…'},
-      { key:'embody', title:'Embody the New Reality', icon:'crown',
-        guidance:'Step into the version of yourself that already lives this reality. Walk, speak, think, and feel as the person who already has what you have declared. This is the bridge between worlds.',
-        quote:{text:'I am empowered. I am free. I am unlimited. I am creative. I am divine. That is who I am.',ref:'Joe Dispenza'},
-        placeholder:'I step into my new reality now. I embody the version of myself who already lives this truth. I walk as that person, I speak as that person, I vibrate at the frequency of that person. I am already there…'},
+        guidance:'These are not wishes — they are declarations of what already is.',
+        quote:{text:'My word is my wand. Every word I speak creates my reality.',ref:'Florence Scovel Shinn'},
+        placeholder:'I declare: I am whole, I am powerful, I am creating the life I was born to live…'},
+      { key:'embody', title:'Embody It Now', icon:'crown',
+        guidance:'Step into the version of you who already lives this reality.',
+        quote:{text:'I am empowered. I am free. I am unlimited. That is who I am.',ref:'Joe Dispenza'},
+        placeholder:'I embody this reality now. I walk, speak, and vibrate as that person…'},
       { key:'closing', title:'Seal the Declaration', icon:'cross',
-        guidance:'Seal your reality declaration into the quantum field. It is done. It cannot be undone. Walk forward knowing that your declared reality is already manifesting.',
-        quote:{text:'I begin it now. Boldness has genius, power, and magic in it. I am bold.',ref:'Johann Wolfgang von Goethe'},
-        placeholder:'This declaration is sealed into the quantum field. It is done. It is irreversible. My reality is shifting to match what I have spoken. I walk forward in total certainty. And so it is.'}
+        guidance:'It is done. Walk forward knowing your reality is already manifesting.',
+        quote:{text:'I begin it now. Boldness has genius, power, and magic in it.',ref:'Johann Wolfgang von Goethe'},
+        placeholder:'This declaration is sealed. My reality is shifting. I walk forward in certainty. And so it is.'}
     ]
   },
   {
     id:'peace_presence', icon:'dove', name:'Peace & Presence', color:'#80CBC4',
-    description:'Dissolve anxiety and turbulence — return to the still point within where infinite peace and clarity reside.',
+    description:'Dissolve anxiety and return to the still point within.',
     steps:[
-      { key:'breathe', title:'Breathe — Return to Center', icon:'pray',
-        guidance:'Begin with conscious breathing. Each breath is a return to the present moment. Inhale peace, exhale tension. Let the breath be your anchor in the now.',
-        quote:{text:'Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.',ref:'Thich Nhat Hanh'},
-        placeholder:'I return to my breath now. I breathe in deeply — drawing peace into every cell. I breathe out slowly — releasing all tension, all worry, all turbulence. My breath is my anchor in this present moment…'},
-      { key:'release_anxiety', title:'Release the Turbulence', icon:'flame',
-        guidance:'Acknowledge the anxiety without identifying with it. It is energy moving through you — not who you are. Observe it with detachment and let it pass like a wave.',
-        quote:{text:'I am the sky. My anxiety is only the weather. It passes through me and dissolves.',ref:'Pema Chödrön'},
-        placeholder:'I acknowledge the turbulence I feel without becoming it. This anxiety is not who I am — it is energy passing through. I observe it with detachment and give it permission to dissolve. It is only weather; I am the sky…'},
+      { key:'breathe', title:'Breathe', icon:'pray',
+        guidance:'Inhale peace, exhale tension — let the breath anchor you in the now.',
+        quote:{text:'Feelings come and go like clouds. Conscious breathing is my anchor.',ref:'Thich Nhat Hanh'},
+        placeholder:'I breathe in peace. I breathe out tension. My breath is my anchor…'},
+      { key:'release_anxiety', title:'Release Turbulence', icon:'flame',
+        guidance:'Acknowledge anxiety without becoming it — it is weather, you are the sky.',
+        quote:{text:'I am the sky. My anxiety is only the weather.',ref:'Pema Chödrön'},
+        placeholder:'This anxiety is not who I am. It is energy passing through. I let it dissolve…'},
       { key:'stillness', title:'Enter the Still Point', icon:'dove',
-        guidance:'Drop beneath the surface noise into the still point at your center. This is the eye of the storm — perfectly calm, perfectly clear, perfectly present.',
-        quote:{text:'Within me there is a stillness and a sanctuary. I retreat there now.',ref:'Hermann Hesse'},
-        placeholder:'I drop beneath the noise of my mind into the still point within. Here there is only peace. Here there is only clarity. I rest in this sanctuary — the eye of the storm where all is calm…'},
-      { key:'affirm', title:'Affirm Your Peace', icon:'star',
-        guidance:'Affirm that peace is your natural state. Anxiety is the deviation — peace is the baseline. You are returning to what you already are.',
+        guidance:'Drop beneath the noise into the perfectly calm center within.',
+        quote:{text:'Within me there is a stillness and a sanctuary.',ref:'Hermann Hesse'},
+        placeholder:'I drop into the still point within. Here there is only peace and clarity…'},
+      { key:'affirm', title:'Affirm Peace', icon:'star',
+        guidance:'Peace is your natural state — anxiety is the deviation, not the baseline.',
         quote:{text:'My peace comes from within. I do not seek it outside myself.',ref:'Siddhartha Gautama'},
-        placeholder:'Peace is my natural state. Anxiety is a temporary deviation, not my truth. I am returning to what I have always been — still, centered, sovereign. Peace flows through me like a river with no end…'},
+        placeholder:'Peace is my natural state. I am returning to what I have always been…'},
       { key:'closing', title:'Carry the Stillness', icon:'cross',
-        guidance:'Seal this peace into your nervous system. Carry this stillness into every interaction, every challenge, every moment of your day.',
-        quote:{text:'I choose peace over stress. I choose stillness over chaos. This is my greatest power.',ref:'William James'},
-        placeholder:'I seal this deep peace into my nervous system. I carry this stillness with me into every moment. No external circumstance can disturb the peace at my center. I am calm. I am clear. And so it is.'}
+        guidance:'Seal this peace into your nervous system — carry it into your day.',
+        quote:{text:'I choose peace over stress. This is my greatest power.',ref:'William James'},
+        placeholder:'I seal this peace into my field. Nothing disturbs my center. And so it is.'}
     ]
   },
   {
     id:'shadow_integration', icon:'scroll', name:'Shadow Integration', color:'#B39DDB',
-    description:'Acknowledge and integrate the shadow self — transform suppressed aspects into sources of authentic power and wholeness.',
+    description:'Transform suppressed aspects into sources of authentic power.',
     steps:[
-      { key:'courage', title:'Summon the Courage to Look Within', icon:'bolt',
-        guidance:'Begin by summoning the courage to face what you have hidden from yourself. The shadow is not your enemy — it is the part of you that was exiled. It holds immense power.',
-        quote:{text:'I become enlightened not by imagining figures of light, but by making my darkness conscious.',ref:'Carl Jung'},
-        placeholder:'I summon the courage to look within. I am ready to face the parts of myself I have hidden, denied, or suppressed. I do this not from fear but from a desire to become whole…'},
-      { key:'identify', title:'Identify the Shadow', icon:'search',
-        guidance:'Name the aspects of yourself you have rejected — the anger, the jealousy, the fear, the shame. These are not flaws — they are fragments of self that need integration, not elimination.',
-        quote:{text:'What irritates me in others reveals what I have not yet accepted in myself. I see it now.',ref:'Carl Jung'},
-        placeholder:'I name my shadow now. I acknowledge the anger I was told to hide, the fear I was shamed for feeling, the needs I was taught to suppress that I have suppressed. I do not judge these aspects — I simply acknowledge them. They are part of my story…'},
+      { key:'courage', title:'Summon Courage', icon:'bolt',
+        guidance:'Face what you\'ve hidden — the shadow is not your enemy, it\'s exiled power.',
+        quote:{text:'I become enlightened not by imagining light, but by making my darkness conscious.',ref:'Carl Jung'},
+        placeholder:'I summon the courage to face the parts of myself I have hidden or suppressed…'},
+      { key:'identify', title:'Name the Shadow', icon:'search',
+        guidance:'Name what you\'ve rejected — these are fragments that need integration, not elimination.',
+        quote:{text:'What irritates me in others reveals what I have not yet accepted in myself.',ref:'Carl Jung'},
+        placeholder:'I name my shadow: the anger, the fear, the needs I was taught to suppress…'},
       { key:'accept', title:'Accept Without Judgment', icon:'heart',
-        guidance:'Accept these shadow aspects with compassion. They developed as survival mechanisms. They protected you when you could not protect yourself. Thank them for their service.',
-        quote:{text:'The curious paradox is that when I accept myself just as I am, then I can change.',ref:'Carl Rogers'},
-        placeholder:'I accept these aspects of myself without judgment. They developed for a reason — they were my survival mechanisms, my shields, my coping strategies. I thank them for protecting me when I could not protect myself…'},
-      { key:'integrate', title:'Integrate — Reclaim Your Power', icon:'star',
-        guidance:'Integrate the shadow by welcoming it home. When you embrace what you have denied, you reclaim the energy that was spent keeping it hidden. Shadow work is power reclamation.',
+        guidance:'These were survival mechanisms — thank them for their service.',
+        quote:{text:'When I accept myself just as I am, then I can change.',ref:'Carl Rogers'},
+        placeholder:'I accept these aspects with compassion. They protected me when I could not…'},
+      { key:'integrate', title:'Reclaim Your Power', icon:'star',
+        guidance:'Welcome the shadow home — reclaim the energy spent keeping it hidden.',
         quote:{text:'I am not what happened to me. I am what I choose to become.',ref:'Carl Jung'},
-        placeholder:'I welcome my shadow home. I integrate every fragment, every exiled part, every suppressed emotion. The energy I spent hiding from myself is now reclaimed. I feel my wholeness expanding. I am becoming complete…'},
+        placeholder:'I welcome my shadow home. The energy I spent hiding is now reclaimed as power…'},
       { key:'closing', title:'Declare Wholeness', icon:'cross',
-        guidance:'Declare your wholeness. You are not broken — you were fragmented. Now you are reassembled. The shadow has been integrated, and you are more powerful for it.',
-        quote:{text:'My task is not to seek for love, but to find and dissolve every barrier I have built against it.',ref:'Rumi'},
-        placeholder:'I am whole. I am integrated. The shadow has been welcomed home and transformed into power. There is nothing left to hide from, nothing left to fear within myself. I am complete. And so it is.'}
+        guidance:'You were never broken — you were fragmented. Now you are whole.',
+        quote:{text:'My task is not to seek for love, but to dissolve every barrier I built against it.',ref:'Rumi'},
+        placeholder:'I am whole. I am integrated. The shadow is now my strength. And so it is.'}
     ]
   }
 ];
@@ -1439,6 +1439,201 @@ function openScreenshotModal() {
     text: state.lastIntentionText || '',
     date: new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })
   });
+}
+
+/* ── Share Card Generator ── */
+let shareCardStyle = 'dark';
+
+const CARD_THEMES = {
+  dark: {
+    bg1:'#0D0520', bg2:'#0A0A2E', bg3:'#0D0520',
+    accent:'#00D4AA', accentGlow:'rgba(0,212,170,0.35)',
+    text:'#FFFFFF', sub:'rgba(255,255,255,0.6)', brand:'#00D4AA',
+    line:'rgba(0,212,170,0.4)', particle:'rgba(0,212,170,0.15)'
+  },
+  gold: {
+    bg1:'#1A1200', bg2:'#2A1E00', bg3:'#1A1200',
+    accent:'#D4AF37', accentGlow:'rgba(212,175,55,0.35)',
+    text:'#F0DFA0', sub:'rgba(240,223,160,0.6)', brand:'#D4AF37',
+    line:'rgba(212,175,55,0.4)', particle:'rgba(212,175,55,0.12)'
+  },
+  teal: {
+    bg1:'#021A16', bg2:'#03302A', bg3:'#021A16',
+    accent:'#00D4AA', accentGlow:'rgba(0,212,170,0.4)',
+    text:'#CCFFF0', sub:'rgba(204,255,240,0.6)', brand:'#33FFD1',
+    line:'rgba(0,212,170,0.5)', particle:'rgba(0,212,170,0.18)'
+  },
+  minimal: {
+    bg1:'#FAFAFA', bg2:'#F0F0F0', bg3:'#FAFAFA',
+    accent:'#222222', accentGlow:'rgba(0,0,0,0.08)',
+    text:'#111111', sub:'rgba(0,0,0,0.45)', brand:'#333333',
+    line:'rgba(0,0,0,0.12)', particle:'rgba(0,0,0,0.04)'
+  }
+};
+
+function openShareCardModal() {
+  if (!state.generatedCode) return;
+  const modal = document.getElementById('share-card-modal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Show native share button if supported
+  const nativeBtn = document.getElementById('share-card-native-btn');
+  if (nativeBtn && navigator.share && navigator.canShare) nativeBtn.style.display = '';
+  shareCardStyle = 'dark';
+  document.querySelectorAll('.style-btn').forEach(b => b.classList.toggle('active', b.dataset.style === 'dark'));
+  renderShareCard();
+}
+
+function closeShareCard(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('intention-modal-close')) return;
+  const modal = document.getElementById('share-card-modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function setCardStyle(style) {
+  shareCardStyle = style;
+  document.querySelectorAll('.style-btn').forEach(b => b.classList.toggle('active', b.dataset.style === style));
+  renderShareCard();
+}
+
+function renderShareCard() {
+  const canvas = document.getElementById('share-card-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = 1080, H = 1080;
+  const theme = CARD_THEMES[shareCardStyle] || CARD_THEMES.dark;
+  const code = state.generatedCode || '0';
+  const catName = (state.selectedCategory && state.selectedCategory.name) || 'Reality Code';
+
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, theme.bg1);
+  grad.addColorStop(0.5, theme.bg2);
+  grad.addColorStop(1, theme.bg3);
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Particle dots
+  const rng = seedRandom(parseInt(code) || 42);
+  for (let i = 0; i < 60; i++) {
+    const x = rng() * W, y = rng() * H, r = rng() * 3 + 1;
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = theme.particle; ctx.fill();
+  }
+
+  // Sacred geometry circle (Seed of Life hint)
+  ctx.save();
+  ctx.strokeStyle = theme.line;
+  ctx.lineWidth = 1.5;
+  ctx.globalAlpha = 0.3;
+  const cx = W / 2, cy = H / 2, radius = 260;
+  ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI * 2); ctx.stroke();
+  for (let a = 0; a < 6; a++) {
+    const ax = cx + radius * Math.cos(a * Math.PI / 3);
+    const ay = cy + radius * Math.sin(a * Math.PI / 3);
+    ctx.beginPath(); ctx.arc(ax, ay, radius, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.restore();
+
+  // Category badge
+  ctx.font = '600 28px "Cinzel", serif';
+  ctx.fillStyle = theme.accent;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(catName.toUpperCase(), cx, 200);
+
+  // Decorative line
+  ctx.beginPath();
+  ctx.moveTo(cx - 120, 240); ctx.lineTo(cx + 120, 240);
+  ctx.strokeStyle = theme.line; ctx.lineWidth = 1; ctx.stroke();
+
+  // Code number — large, centred
+  ctx.save();
+  const codeSize = code.length <= 3 ? 220 : code.length <= 5 ? 160 : 120;
+  ctx.font = '900 ' + codeSize + 'px "Cinzel", serif';
+  ctx.fillStyle = theme.text;
+  ctx.shadowColor = theme.accentGlow;
+  ctx.shadowBlur = 40;
+  ctx.fillText(code, cx, cy + 20);
+  ctx.shadowBlur = 60;
+  ctx.fillText(code, cx, cy + 20);
+  ctx.restore();
+
+  // "Reality Code" subtitle
+  ctx.font = '400 24px "Lato", sans-serif';
+  ctx.fillStyle = theme.sub;
+  ctx.letterSpacing = '0.15em';
+  ctx.fillText('REALITY CODE', cx, cy + 100);
+
+  // Divider
+  ctx.beginPath();
+  ctx.moveTo(cx - 80, H - 220); ctx.lineTo(cx + 80, H - 220);
+  ctx.strokeStyle = theme.line; ctx.lineWidth = 1; ctx.stroke();
+
+  // Brand
+  ctx.font = '700 26px "Cinzel", serif';
+  ctx.fillStyle = theme.brand;
+  ctx.fillText('QUANTUM REALITY CODES', cx, H - 170);
+
+  // URL
+  ctx.font = '400 20px "Lato", sans-serif';
+  ctx.fillStyle = theme.sub;
+  ctx.fillText('quantumrealitycodes.com', cx, H - 130);
+
+  // Tagline
+  ctx.font = 'italic 20px "Lato", sans-serif';
+  ctx.fillStyle = theme.sub;
+  ctx.globalAlpha = 0.6;
+  ctx.fillText('Meditate on this code with me', cx, H - 80);
+  ctx.globalAlpha = 1;
+}
+
+function seedRandom(seed) {
+  let s = seed;
+  return function() {
+    s = (s * 16807 + 0) % 2147483647;
+    return s / 2147483647;
+  };
+}
+
+function downloadShareCard() {
+  const canvas = document.getElementById('share-card-canvas');
+  if (!canvas) return;
+  canvas.toBlob(function(blob) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'reality-code-' + (state.generatedCode || 'card') + '.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast('Share card downloaded');
+  }, 'image/png');
+}
+
+function shareCardNative() {
+  const canvas = document.getElementById('share-card-canvas');
+  if (!canvas || !navigator.share) return;
+  canvas.toBlob(function(blob) {
+    const file = new File([blob], 'reality-code-' + (state.generatedCode || 'card') + '.png', { type: 'image/png' });
+    const shareData = {
+      title: 'My Reality Code: ' + (state.generatedCode || ''),
+      text: 'Meditate on this code with me. Create yours at quantumrealitycodes.com #QuantumRealityCodes',
+      files: [file]
+    };
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      navigator.share(shareData).catch(() => {});
+    } else {
+      // Fallback: share without file
+      navigator.share({
+        title: shareData.title,
+        text: shareData.text,
+        url: 'https://quantumrealitycodes.com'
+      }).catch(() => {});
+    }
+  }, 'image/png');
 }
 
 function closeIntentionModal(e) {
