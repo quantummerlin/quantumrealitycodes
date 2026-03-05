@@ -1052,7 +1052,7 @@ function buildShareMessage(opts) {
   const catLabel = getCategoryLabel();
   const code = (opts && opts.code) || state.generatedCode || '';
   const wisdom = randomShareWisdom();
-  return `My ${catLabel}Reality Code: ${code}\n\n${wisdom}\n\nThis code was generated through Quantum Reality Codes — structured intentions encoded through Vibrational Encoding.\n\nMeditate on this code with me to amplify our collective intention.\n\nCreate yours at quantumrealitycodes.com\n\n#QuantumRealityCodes #RealityCode #ManifestWithMe`;
+  return `My ${catLabel}Reality Code: ${code}\n\n${wisdom}\n\nEvery person who sees this code and holds intention on it exponentially amplifies its power. You don't need to know what I intended — just hold the number in your mind for a moment.\n\nThe more minds on one code, the faster reality shifts.\n\nCreate yours at quantumrealitycodes.com\n\n#QuantumRealityCodes #GroupIntention #RealityCode`;
 }
 
 function copyCode() {
@@ -1077,7 +1077,7 @@ function shareFacebook() {
 
 function shareTwitter() {
   const catLabel = getCategoryLabel();
-  const msg = `My ${catLabel}Reality Code: ${state.generatedCode} — Structured intention encoded through Vibrational Encoding. Manifest with me. quantumrealitycodes.com #QuantumRealityCodes #RealityCode`;
+  const msg = `My ${catLabel}Reality Code: ${state.generatedCode} — Hold this code in your mind for a moment. Every mind that focuses on it amplifies the intention exponentially. quantumrealitycodes.com #QuantumRealityCodes #GroupIntention`;
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(msg), '_blank');
 }
 
@@ -1585,7 +1585,7 @@ function renderShareCard() {
   ctx.font = 'italic 20px "Lato", sans-serif';
   ctx.fillStyle = theme.sub;
   ctx.globalAlpha = 0.6;
-  ctx.fillText('Meditate on this code with me', cx, H - 80);
+  ctx.fillText('Every mind that holds this code amplifies it', cx, H - 80);
   ctx.globalAlpha = 1;
 }
 
@@ -1620,7 +1620,7 @@ function shareCardNative() {
     const file = new File([blob], 'reality-code-' + (state.generatedCode || 'card') + '.png', { type: 'image/png' });
     const shareData = {
       title: 'My Reality Code: ' + (state.generatedCode || ''),
-      text: 'Meditate on this code with me. Create yours at quantumrealitycodes.com #QuantumRealityCodes',
+      text: 'Hold this code in your mind — every person who does amplifies its power exponentially. Create yours at quantumrealitycodes.com #QuantumRealityCodes #GroupIntention',
       files: [file]
     };
     if (navigator.canShare && navigator.canShare(shareData)) {
