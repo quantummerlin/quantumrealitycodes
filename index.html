@@ -504,6 +504,52 @@
       <p style="margin-top:0.8rem;font-size:0.7rem;color:var(--text-dim);">Post your code → others meditate on it → your reality shifts faster</p>
     </div>
 
+    <!-- ── Mersenne Calculator ── -->
+    <div class="card mersenne-calc-card">
+      <h3 class="card-title">#CommentTheCode Calculator</h3>
+      <p class="card-sub">See how many realities are affected as more people hold your code</p>
+
+      <div class="mersenne-calc">
+        <div class="mersenne-input-row">
+          <label for="mersenne-slider" class="mersenne-input-label">People holding your code:</label>
+          <input type="number" id="mersenne-input" class="mersenne-number-input" min="1" max="1000" value="10" oninput="updateMersenne(this.value, 'input')">
+        </div>
+
+        <input type="range" id="mersenne-slider" class="mersenne-slider" min="1" max="100" value="10" oninput="updateMersenne(this.value, 'slider')">
+
+        <div class="mersenne-slider-labels">
+          <span>1</span><span>25</span><span>50</span><span>75</span><span>100+</span>
+        </div>
+
+        <div class="mersenne-result">
+          <div class="mersenne-result-label">Entanglement Connections</div>
+          <div class="mersenne-result-number" id="mersenne-result">1,023</div>
+          <div class="mersenne-result-context" id="mersenne-context">More than the population of a small town</div>
+        </div>
+
+        <div class="mersenne-formula">
+          2<sup id="mersenne-exponent">10</sup> − 1 = <span id="mersenne-formula-result">1,023</span>
+        </div>
+
+        <div class="mersenne-milestones" id="mersenne-milestones">
+          <div class="milestone achieved">✓ 2 people — 3 connections</div>
+          <div class="milestone achieved">✓ 8 people — McTaggart threshold (255)</div>
+          <div class="milestone achieved">✓ 10 people — 1,023 connections</div>
+          <div class="milestone">○ 20 people — over 1 million</div>
+          <div class="milestone">○ 50 people — over 1 quadrillion</div>
+          <div class="milestone">○ 100 people — more than atoms on Earth</div>
+        </div>
+
+        <div class="mersenne-share-row">
+          <button class="btn btn-teal" onclick="shareMersenne()" style="font-size:0.75rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="vertical-align:-2px;margin-right:0.3rem;"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share This
+          </button>
+          <button class="btn btn-outline" onclick="shareMersenneTwitter()" style="font-size:0.75rem;">Post to X</button>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Live Your Code Daily ── -->
     <div class="card">
       <h3 class="card-title">Live Your Code Daily</h3>

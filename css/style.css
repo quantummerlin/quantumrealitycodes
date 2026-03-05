@@ -444,6 +444,84 @@ body{
 }
 .mersenne-note strong{color:var(--gold-light)}
 
+/* ── Mersenne Calculator ── */
+.mersenne-calc{padding:0.5rem 0}
+.mersenne-input-row{
+  display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-bottom:1rem;
+}
+.mersenne-input-label{font-size:0.78rem;color:var(--text-dim)}
+.mersenne-number-input{
+  width:70px;padding:0.4rem 0.5rem;text-align:center;
+  font-family:'Cinzel',serif;font-size:1rem;font-weight:700;
+  color:var(--gold-light);background:rgba(255,255,255,0.04);
+  border:1px solid rgba(0,212,170,0.3);border-radius:var(--radius-sm);
+  outline:none;transition:var(--transition);
+}
+.mersenne-number-input:focus{border-color:var(--teal);box-shadow:0 0 12px rgba(0,212,170,0.2)}
+.mersenne-slider{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;
+  border-radius:3px;background:rgba(255,255,255,0.08);outline:none;
+  margin-bottom:0.3rem;cursor:pointer;
+}
+.mersenne-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:22px;height:22px;
+  border-radius:50%;background:var(--teal);cursor:pointer;
+  box-shadow:0 0 10px rgba(0,212,170,0.4);border:2px solid rgba(255,255,255,0.2);
+  transition:box-shadow 0.2s;
+}
+.mersenne-slider::-webkit-slider-thumb:hover{box-shadow:0 0 18px rgba(0,212,170,0.6)}
+.mersenne-slider::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;background:var(--teal);cursor:pointer;
+  box-shadow:0 0 10px rgba(0,212,170,0.4);border:2px solid rgba(255,255,255,0.2);
+}
+.mersenne-slider::-webkit-slider-runnable-track{border-radius:3px}
+.mersenne-slider::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,0.08)}
+.mersenne-slider-labels{
+  display:flex;justify-content:space-between;font-size:0.62rem;color:var(--text-dim);
+  margin-bottom:1.2rem;padding:0 2px;
+}
+.mersenne-result{
+  text-align:center;padding:1.5rem 0.5rem;
+  background:rgba(0,212,170,0.03);border-radius:var(--radius-md);
+  margin-bottom:1rem;
+}
+.mersenne-result-label{
+  font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--text-dim);margin-bottom:0.5rem;
+}
+.mersenne-result-number{
+  font-family:'Cinzel',serif;font-size:2.2rem;font-weight:900;
+  color:var(--teal);line-height:1.2;
+  text-shadow:0 0 20px rgba(0,212,170,0.3), 0 0 40px rgba(0,212,170,0.15);
+  word-break:break-all;padding:0 0.5rem;
+}
+.mersenne-result-context{
+  font-size:0.72rem;font-style:italic;color:var(--gold-dim);margin-top:0.5rem;
+}
+.mersenne-formula{
+  text-align:center;font-family:'Courier New',monospace;font-size:0.78rem;
+  color:var(--text-dim);margin-bottom:1rem;padding:0.5rem;
+  background:rgba(255,255,255,0.02);border-radius:var(--radius-sm);
+}
+.mersenne-formula sup{font-size:0.65rem;color:var(--teal)}
+.mersenne-milestones{
+  padding:0 0.5rem;margin-bottom:1.2rem;
+}
+.milestone{
+  font-size:0.72rem;color:var(--text-dim);padding:0.25rem 0;opacity:0.5;
+  transition:var(--transition);
+}
+.milestone.achieved{
+  color:var(--teal);opacity:1;font-weight:600;
+}
+.mersenne-share-row{
+  display:flex;justify-content:center;gap:0.6rem;flex-wrap:wrap;
+}
+@media(max-width:600px){
+  .mersenne-result-number{font-size:1.6rem}
+  .mersenne-input-row{flex-direction:column;gap:0.4rem}
+}
+
 /* ── Frequency Visualisation Bar ── */
 .code-frequency-bar{
   width:100%;max-width:320px;height:36px;margin:0 auto 1rem;

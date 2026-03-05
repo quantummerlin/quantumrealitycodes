@@ -1639,6 +1639,95 @@ function shareCardNative() {
   }, 'image/png');
 }
 
+/* ── Mersenne Calculator (#CommentTheCode) ── */
+function formatBigNumber(n) {
+  if (n <= Number.MAX_SAFE_INTEGER) return n.toLocaleString('en-US');
+  const s = n.toString();
+  if (s.length <= 20) return s.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return s.slice(0, 4) + '... (' + s.length + ' digits)';
+}
+
+function mersenne(n) {
+  if (n <= 52) return Math.pow(2, n) - 1;
+  // BigInt for large values
+  return (2n ** BigInt(n)) - 1n;
+}
+
+function getMersenneContext(n) {
+  if (n <= 1) return 'Just you — the seed of intention';
+  if (n <= 2) return 'The beginning of resonance';
+  if (n <= 7) return 'A prayer circle forming';
+  if (n <= 10) return 'McTaggart\'s power threshold reached';
+  if (n <= 15) return 'More connections than people in a village';
+  if (n <= 20) return 'Over a million connections';
+  if (n <= 30) return 'More connections than seconds in a year';
+  if (n <= 50) return 'More than a quadrillion — exceeds neurons in the brain';
+  if (n <= 80) return 'More connections than atoms on Earth';
+  if (n <= 100) return 'More than stars in the observable universe';
+  if (n <= 256) return 'Exceeds the number of atoms in the universe';
+  if (n <= 500) return 'A number with ' + Math.ceil(n * 0.301) + ' digits — beyond comprehension';
+  return 'A number with ' + Math.ceil(n * 0.301) + ' digits — reality itself bends';
+}
+
+function updateMersenne(val, source) {
+  const n = Math.max(1, Math.min(1000, parseInt(val) || 1));
+  const slider = document.getElementById('mersenne-slider');
+  const input = document.getElementById('mersenne-input');
+  if (source === 'slider' && input) input.value = n;
+  if (source === 'input' && slider) slider.value = Math.min(n, 100);
+
+  const result = mersenne(n);
+  const formatted = formatBigNumber(result);
+
+  const resultEl = document.getElementById('mersenne-result');
+  const contextEl = document.getElementById('mersenne-context');
+  const expEl = document.getElementById('mersenne-exponent');
+  const formulaEl = document.getElementById('mersenne-formula-result');
+
+  if (resultEl) resultEl.textContent = formatted;
+  if (contextEl) contextEl.textContent = getMersenneContext(n);
+  if (expEl) expEl.textContent = n;
+  if (formulaEl) formulaEl.textContent = formatted;
+
+  // Update milestones
+  const thresholds = [
+    { n: 2, text: '2 people — 3 connections' },
+    { n: 8, text: '8 people — McTaggart threshold (255)' },
+    { n: 10, text: '10 people — 1,023 connections' },
+    { n: 20, text: '20 people — over 1 million' },
+    { n: 50, text: '50 people — over 1 quadrillion' },
+    { n: 100, text: '100 people — more than atoms on Earth' }
+  ];
+  const container = document.getElementById('mersenne-milestones');
+  if (container) {
+    container.innerHTML = thresholds.map(t =>
+      '<div class="milestone ' + (n >= t.n ? 'achieved' : '') + '">' +
+      (n >= t.n ? '✓ ' : '○ ') + t.text + '</div>'
+    ).join('');
+  }
+}
+
+function shareMersenne() {
+  const n = parseInt(document.getElementById('mersenne-input').value) || 10;
+  const result = mersenne(n);
+  const formatted = formatBigNumber(result);
+  const text = n + ' people holding intention on one Reality Code = ' + formatted + ' entanglement connections.\n\nThe formula: 2^' + n + ' − 1\n\n' + getMersenneContext(n) + '.\n\nThis is why group intention doesn\'t just help — it rewrites reality.\n\n#CommentTheCode at quantumrealitycodes.com';
+
+  if (navigator.share) {
+    navigator.share({ title: '#CommentTheCode', text: text, url: 'https://quantumrealitycodes.com' }).catch(() => {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => toast('Copied to clipboard'));
+  }
+}
+
+function shareMersenneTwitter() {
+  const n = parseInt(document.getElementById('mersenne-input').value) || 10;
+  const result = mersenne(n);
+  const formatted = formatBigNumber(result);
+  const msg = n + ' people on one Reality Code = ' + formatted + ' entanglement connections (2^' + n + ' − 1). Group intention doesn\'t add — it multiplies. #CommentTheCode quantumrealitycodes.com';
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+}
+
 function closeIntentionModal(e) {
   if (e && e.target !== e.currentTarget && !e.target.classList.contains('intention-modal-close')) return;
   const modal = document.getElementById('intention-modal');
