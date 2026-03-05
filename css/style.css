@@ -517,6 +517,14 @@ body{
 .mersenne-share-row{
   display:flex;justify-content:center;gap:0.6rem;flex-wrap:wrap;
 }
+.page-legal{
+  text-align:center;padding:1.5rem 0 0.5rem;font-size:0.62rem;color:var(--text-dim);opacity:0.5;
+}
+.page-legal a{
+  color:var(--text-dim);text-decoration:none;transition:var(--transition);
+}
+.page-legal a:hover{color:var(--gold);opacity:1;}
+.page-legal span{margin:0 0.3rem;}
 @media(max-width:600px){
   .mersenne-result-number{font-size:1.6rem}
   .mersenne-input-row{flex-direction:column;gap:0.4rem}
