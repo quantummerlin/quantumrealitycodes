@@ -79,6 +79,6 @@ python manifest.py card energy_shield   # Single card
 
 ## License
 
-Free forever. Built for conscious creators everywhere.
+Built for conscious creators everywhere.
 
 Quantum Reality Codes © 2025
