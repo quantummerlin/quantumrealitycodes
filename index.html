@@ -760,16 +760,6 @@
   </div><!-- /pages-container -->
   </main>
 
-  <!-- ── Bottom Tab Bar (Apple-style) ── -->
-  <nav class="tab-bar" id="tab-bar" role="navigation" aria-label="Main navigation">
-    <button class="tab-btn active" data-page="home" onclick="navigate('home')" aria-label="Create"><span class="tab-icon" id="tab-icon-home"></span><span class="tab-label">Create</span></button>
-    <button class="tab-btn" data-page="how" onclick="navigate('how')" aria-label="How It Works"><span class="tab-icon" id="tab-icon-how"></span><span class="tab-label">How</span></button>
-    <button class="tab-btn" data-page="wisdom" onclick="navigate('wisdom')" aria-label="Wisdom"><span class="tab-icon" id="tab-icon-wisdom"></span><span class="tab-label">Wisdom</span></button>
-    <button class="tab-btn" data-page="amplify" onclick="navigate('amplify')" aria-label="Amplify"><span class="tab-icon" id="tab-icon-amplify"></span><span class="tab-label">Amplify</span></button>
-    <button class="tab-btn" data-page="journal" onclick="navigate('journal');renderJournal()" aria-label="Journal"><span class="tab-icon" id="tab-icon-journal"></span><span class="tab-label">Journal</span></button>
-    <button class="tab-btn" data-page="about" onclick="navigate('about')" aria-label="About"><span class="tab-icon" id="tab-icon-about"></span><span class="tab-label">About</span></button>
-  </nav>
-
   <!-- ── Footer ── -->
   <footer class="site-footer" role="contentinfo">
     <p class="footer-text">Quantum Reality Codes &copy; 2025&ndash;2026 &mdash; quantumrealitycodes.com</p>
@@ -787,6 +777,16 @@
   </footer>
 
 </div><!-- /app -->
+
+<!-- ── Bottom Tab Bar (Apple-style) — outside #app for full-width fixed positioning ── -->
+<nav class="tab-bar" id="tab-bar" role="navigation" aria-label="Main navigation">
+  <button class="tab-btn active" data-page="home" onclick="navigate('home')" aria-label="Create"><span class="tab-icon" id="tab-icon-home"></span><span class="tab-label">Create</span></button>
+  <button class="tab-btn" data-page="how" onclick="navigate('how')" aria-label="How It Works"><span class="tab-icon" id="tab-icon-how"></span><span class="tab-label">How</span></button>
+  <button class="tab-btn" data-page="wisdom" onclick="navigate('wisdom')" aria-label="Wisdom"><span class="tab-icon" id="tab-icon-wisdom"></span><span class="tab-label">Wisdom</span></button>
+  <button class="tab-btn" data-page="amplify" onclick="navigate('amplify')" aria-label="Amplify"><span class="tab-icon" id="tab-icon-amplify"></span><span class="tab-label">Amplify</span></button>
+  <button class="tab-btn" data-page="journal" onclick="navigate('journal');renderJournal()" aria-label="Journal"><span class="tab-icon" id="tab-icon-journal"></span><span class="tab-label">Journal</span></button>
+  <button class="tab-btn" data-page="about" onclick="navigate('about')" aria-label="About"><span class="tab-icon" id="tab-icon-about"></span><span class="tab-label">About</span></button>
+</nav>
 
 <!-- ── First-Visit Welcome Overlay ── -->
 <div id="welcome-overlay" class="welcome-overlay" style="display:none;">
