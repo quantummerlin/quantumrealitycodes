@@ -1173,7 +1173,7 @@ let timerStart = 0, timerInterval = null;
 /* ─────────────────────────────────────────────
    11. WISDOM LIBRARY (with Favorites)
    ───────────────────────────────────────────── */
-let activeTag = 'all';
+let activeTag = '';
 let activeAuthor = '';
 
 /* Build a unique ID for each wisdom quote (category + index) */
@@ -1204,10 +1204,14 @@ function filterWisdoms(tag) {
 function filterByAuthor(author, event) {
   if (event) event.stopPropagation();
   activeAuthor = (activeAuthor === author) ? '' : author;
-  /* Clear tag highlights when filtering by author */
   if (activeAuthor) {
+    /* When filtering by author, search across all categories but clear tag highlights */
     activeTag = 'all';
-    document.querySelectorAll('.tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
+    document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  } else {
+    /* Author filter cleared — collapse back to empty state */
+    activeTag = '';
+    document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
   }
   renderWisdoms();
 }
@@ -1222,7 +1226,12 @@ function renderWisdoms(query = '') {
   container.innerHTML = '';
   let results = [];
 
-  if (activeTag === 'all') {
+  if (activeTag === '' && !query && !activeAuthor) {
+    container.innerHTML = '<p class="text-center text-dim mt-2" style="padding:1rem 0;">Select a category above to browse wisdoms.</p>';
+    return;
+  }
+
+  if (activeTag === 'all' || activeTag === '') {
     for (const cat in WISDOM_DB) WISDOM_DB[cat].forEach((s, i) => results.push({ ...s, cat, uid: getWisdomUid(cat, i) }));
   } else if (activeTag === 'favorites') {
     const favs = getFavorites();
